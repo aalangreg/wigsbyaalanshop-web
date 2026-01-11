@@ -83,7 +83,7 @@ Les produits sont dans `data/products.json`. Format :
 
 Valeurs possibles :
 - length: "courte", "moyenne", "longue", "très longue"
-- texture: "Straight", "Body Wave", "Deep Wave", "Loose Wave", "Curly"
+- texture: "Straight", "Body Wave", "Deep Wave", "Loose Wave", "Curly", "Burmese Curly", "Cambodian curly", "Pineapple wave", "Curly Wave", "Italian curly"
 - laceType: "5x5 HD Lace", "4x4 Lace Closure", "13x4 Lace Frontal"
 - hairType: "100% Human Hair", "Raw Hair", "Virgin Hair" (optionnel)
 
@@ -108,7 +108,7 @@ Navigation responsive avec menu mobile.
 ## Vocabulaire
 
 Le site utilise le vocabulaire technique du marché :
-- Textures : Straight, Body Wave, Deep Wave, Loose Wave, Curly
+- Textures : Straight, Body Wave, Deep Wave, Loose Wave, Curly, Burmese Curly, Cambodian curly, Pineapple wave, Curly Wave, Italian curly
 - Lace : 5x5 HD Lace, 4x4 Lace Closure, 13x4 Lace Frontal
 - Cheveux : 100% Human Hair, Raw Hair, Virgin Hair
 
