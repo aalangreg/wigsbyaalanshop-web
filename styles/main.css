@@ -10,9 +10,9 @@ html {
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #000000;
+  color: #2c2c2c;
   line-height: 1.6;
-  background-color: #ffffff;
+  background-color: #fefefe;
 }
 
 img {
@@ -31,8 +31,8 @@ ul {
 }
 
 .header {
-  background-color: #f8e8e8;
-  box-shadow: 0 2px 10px rgba(232, 184, 184, 0.2);
+  background-color: #fefefe;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -50,14 +50,14 @@ ul {
 .nav__logo {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #000000;
+  color: #1a1a1a;
   font-family: "Playfair Display", "Georgia", serif;
 }
 .nav__logo a {
   transition: color 0.3s ease;
 }
 .nav__logo a:hover {
-  color: #ffffff;
+  color: #a68b5b;
 }
 .nav__toggle {
   display: flex;
@@ -71,7 +71,7 @@ ul {
 .nav__toggle span {
   width: 25px;
   height: 2px;
-  background-color: #000000;
+  background-color: #1a1a1a;
   transition: all 0.3s ease;
 }
 @media (min-width: 768px) {
@@ -86,7 +86,7 @@ ul {
   top: 100%;
   left: 0;
   right: 0;
-  background-color: #ffffff;
+  background-color: #fefefe;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 1rem 0;
 }
@@ -106,17 +106,16 @@ ul {
 .nav__menu li a {
   display: block;
   padding: 0.75rem 1.5rem;
-  color: #000000;
+  color: #2c2c2c;
   transition: color 0.3s ease;
   font-weight: 500;
 }
 .nav__menu li a:hover {
-  color: #e8b8b8;
+  color: #c89696;
 }
 .nav__menu li a.active {
-  color: #000000;
+  color: #c89696;
   position: relative;
-  font-weight: 600;
 }
 .nav__menu li a.active::after {
   content: "";
@@ -125,7 +124,7 @@ ul {
   left: 0;
   right: 0;
   height: 2px;
-  background-color: #e8b8b8;
+  background-color: #d4a5a5;
 }
 @media (min-width: 768px) {
   .nav__menu li a {
@@ -147,33 +146,32 @@ ul {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .btn--primary {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #a68b5b;
+  color: #fefefe;
 }
 .btn--primary:hover {
-  background-color: #e8b8b8;
-  color: #000000;
+  background-color: rgb(149.9335968379, 125.2494071146, 81.3664031621);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(232, 184, 184, 0.4);
+  box-shadow: 0 4px 12px rgba(139, 115, 85, 0.3);
 }
 .btn--secondary {
   background-color: transparent;
-  color: #000000;
-  border: 2px solid #000000;
+  color: #a68b5b;
+  border: 2px solid #a68b5b;
 }
 .btn--secondary:hover {
-  background-color: #000000;
-  color: #ffffff;
-  transform: translateY(-2px);
+  background-color: #f5e8e8;
+  border-color: #c89696;
+  color: #c89696;
 }
 .btn--outline {
   background-color: transparent;
-  color: #000000;
-  border: 2px solid #e0d0d0;
+  color: #2c2c2c;
+  border: 2px solid #e8e4df;
 }
 .btn--outline:hover {
-  border-color: #ffffff;
-  color: #ffffff;
+  border-color: #a68b5b;
+  color: #a68b5b;
 }
 
 .container {
@@ -183,7 +181,7 @@ ul {
 }
 
 .hero {
-  background: #f8e8e8;
+  background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
   padding: 4rem 0;
   text-align: center;
 }
@@ -199,7 +197,7 @@ ul {
 .hero__title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #000000;
+  color: #1a1a1a;
   margin-bottom: 1rem;
   font-family: "Playfair Display", "Georgia", serif;
 }
@@ -210,13 +208,13 @@ ul {
 }
 .hero__subtitle {
   font-size: 1.25rem;
-  color: #000000;
+  color: #a68b5b;
   margin-bottom: 1rem;
   font-weight: 600;
 }
 .hero__description {
   font-size: 1.1rem;
-  color: #333333;
+  color: #6b6b6b;
   margin-bottom: 2rem;
   line-height: 1.8;
 }
@@ -237,24 +235,23 @@ ul {
 .badge {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background-color: #ffffff;
-  border: 2px solid #000000;
+  background-color: #f5e8e8;
+  border: 1px solid #d4a5a5;
   border-radius: 20px;
   font-size: 0.9rem;
-  color: #000000;
-  font-weight: 600;
+  color: #2c2c2c;
+  font-weight: 500;
   transition: all 0.3s ease;
 }
 .badge:hover {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #d4a5a5;
+  color: #fefefe;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .features {
   padding: 4rem 0;
-  background-color: #ffffff;
+  background-color: #fefefe;
 }
 .features__grid {
   display: grid;
@@ -276,9 +273,9 @@ ul {
 }
 .feature:hover {
   transform: translateY(-5px);
-  border-color: #e8b8b8;
-  background-color: #f8e8e8;
-  box-shadow: 0 4px 12px rgba(232, 184, 184, 0.3);
+  border-color: #f5e8e8;
+  background-color: #f5e8e8;
+  box-shadow: 0 4px 12px rgba(212, 165, 165, 0.15);
 }
 .feature__icon {
   font-size: 3rem;
@@ -288,16 +285,16 @@ ul {
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #000000;
+  color: #1a1a1a;
 }
 .feature__text {
-  color: #333333;
+  color: #6b6b6b;
   line-height: 1.6;
 }
 
 .preview {
   padding: 4rem 0;
-  background-color: #f8e8e8;
+  background-color: #f5f3f0;
 }
 .preview__grid {
   display: grid;
@@ -324,12 +321,12 @@ ul {
   font-weight: 700;
   text-align: center;
   margin-bottom: 3rem;
-  color: #000000;
+  color: #1a1a1a;
   font-family: "Playfair Display", "Georgia", serif;
 }
 
 .product-card {
-  background-color: #ffffff;
+  background-color: #fefefe;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
@@ -339,14 +336,14 @@ ul {
 }
 .product-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 20px rgba(232, 184, 184, 0.4);
-  border-top: 3px solid #e8b8b8;
+  box-shadow: 0 4px 20px rgba(212, 165, 165, 0.2);
+  border-top: 3px solid #d4a5a5;
 }
 .product-card__image {
   width: 100%;
   height: 300px;
   object-fit: cover;
-  background-color: #f8e8e8;
+  background-color: #f5f3f0;
 }
 .product-card__content {
   padding: 1.5rem;
@@ -358,7 +355,7 @@ ul {
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #000000;
+  color: #1a1a1a;
 }
 .product-card__details {
   display: flex;
@@ -366,7 +363,7 @@ ul {
   flex-wrap: wrap;
   margin-bottom: 1rem;
   font-size: 0.9rem;
-  color: #333333;
+  color: #6b6b6b;
 }
 .product-card__details span:not(.product-card__hair-type):not(.product-card__technical) {
   text-transform: capitalize;
@@ -374,12 +371,12 @@ ul {
 .product-card__hair-type, .product-card__technical {
   text-transform: none !important;
   font-weight: 600;
-  color: #ffffff;
+  color: #a68b5b;
 }
 .product-card__price {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #a68b5b;
   margin-bottom: 1rem;
 }
 .product-card__button {
@@ -389,26 +386,26 @@ ul {
 .catalogue-header {
   padding: 3rem 0 2rem;
   text-align: center;
-  background-color: #f8e8e8;
+  background-color: #f5f3f0;
 }
 
 .page__title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #000000;
+  color: #1a1a1a;
   margin-bottom: 0.5rem;
   font-family: "Playfair Display", "Georgia", serif;
 }
 
 .page__subtitle {
   font-size: 1.1rem;
-  color: #333333;
+  color: #6b6b6b;
 }
 
 .catalogue-filters {
   padding: 2rem 0;
-  background-color: #ffffff;
-  border-bottom: 1px solid #e0d0d0;
+  background-color: #fefefe;
+  border-bottom: 1px solid #e8e4df;
 }
 
 .filters {
@@ -435,7 +432,7 @@ ul {
 .search-input,
 .filter-select {
   padding: 0.75rem 1rem;
-  border: 1px solid #e0d0d0;
+  border: 1px solid #e8e4df;
   border-radius: 4px;
   font-size: 1rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -445,7 +442,7 @@ ul {
 .search-input:focus,
 .filter-select:focus {
   outline: none;
-  border-color: #ffffff;
+  border-color: #a68b5b;
 }
 @media (min-width: 768px) {
   .search-input,
@@ -463,7 +460,7 @@ ul {
   margin-bottom: 2rem;
 }
 .products__count {
-  color: #333333;
+  color: #6b6b6b;
   font-size: 0.9rem;
 }
 .products__grid {
@@ -485,7 +482,7 @@ ul {
 .no-results {
   text-align: center;
   padding: 3rem;
-  color: #333333;
+  color: #6b6b6b;
 }
 
 .product {
@@ -494,12 +491,12 @@ ul {
 .product__back {
   display: inline-block;
   margin-bottom: 2rem;
-  color: #ffffff;
+  color: #a68b5b;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 .product__back:hover {
-  color: rgb(229.5, 229.5, 229.5);
+  color: rgb(149.9335968379, 125.2494071146, 81.3664031621);
 }
 .product__content {
   display: grid;
@@ -521,7 +518,7 @@ ul {
   width: 100%;
   height: 500px;
   object-fit: cover;
-  background-color: #f8e8e8;
+  background-color: #f5f3f0;
 }
 .product-gallery__thumbnails {
   display: grid;
@@ -536,32 +533,32 @@ ul {
   cursor: pointer;
   border: 2px solid transparent;
   transition: all 0.3s ease;
-  background-color: #f8e8e8;
+  background-color: #f5f3f0;
 }
 .product-gallery__thumbnail:hover {
-  border-color: #e8b8b8;
-  box-shadow: 0 2px 8px rgba(232, 184, 184, 0.4);
+  border-color: #d4a5a5;
+  box-shadow: 0 2px 8px rgba(212, 165, 165, 0.3);
 }
 .product-gallery__thumbnail.active {
-  border-color: #d4a0a0;
-  box-shadow: 0 2px 8px rgba(232, 184, 184, 0.5);
+  border-color: #c89696;
+  box-shadow: 0 2px 8px rgba(212, 165, 165, 0.4);
 }
 
 .product-info__name {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #000000;
+  color: #1a1a1a;
   font-family: "Playfair Display", "Georgia", serif;
 }
 .product-info__price {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #a68b5b;
   margin-bottom: 1.5rem;
 }
 .product-info__description {
-  color: #333333;
+  color: #6b6b6b;
   line-height: 1.8;
   margin-bottom: 2rem;
 }
@@ -571,21 +568,21 @@ ul {
 .product-info__spec {
   display: flex;
   padding: 0.75rem 0;
-  border-bottom: 1px solid #e0d0d0;
+  border-bottom: 1px solid #e8e4df;
 }
 .product-info__spec-label {
   font-weight: 600;
   width: 150px;
-  color: #000000;
+  color: #1a1a1a;
 }
 .product-info__spec-value {
-  color: #333333;
+  color: #6b6b6b;
   text-transform: capitalize;
 }
 .product-info__spec-value--technical {
   text-transform: none;
   font-weight: 500;
-  color: #000000;
+  color: #1a1a1a;
 }
 .product-info__features {
   margin-bottom: 2rem;
@@ -593,7 +590,7 @@ ul {
 .product-info__features ul {
   list-style: disc;
   padding-left: 1.5rem;
-  color: #333333;
+  color: #6b6b6b;
 }
 .product-info__features li {
   margin-bottom: 0.5rem;
@@ -605,7 +602,7 @@ ul {
 .page-header {
   padding: 3rem 0 2rem;
   text-align: center;
-  background-color: #f8e8e8;
+  background-color: #f5f3f0;
 }
 
 .about {
@@ -619,11 +616,11 @@ ul {
   font-size: 1.75rem;
   font-weight: 700;
   margin: 2rem 0 1rem;
-  color: #000000;
+  color: #1a1a1a;
   font-family: "Playfair Display", "Georgia", serif;
 }
 .about__text {
-  color: #333333;
+  color: #6b6b6b;
   line-height: 1.8;
   margin-bottom: 1.5rem;
 }
@@ -631,7 +628,7 @@ ul {
   list-style: disc;
   padding-left: 1.5rem;
   margin: 1.5rem 0;
-  color: #333333;
+  color: #6b6b6b;
 }
 .about__list li {
   margin-bottom: 0.75rem;
@@ -653,11 +650,11 @@ ul {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #000000;
+  color: #1a1a1a;
   font-family: "Playfair Display", "Georgia", serif;
 }
 .contact__text {
-  color: #333333;
+  color: #6b6b6b;
   line-height: 1.8;
   margin-bottom: 1rem;
   font-size: 1.1rem;
@@ -676,25 +673,25 @@ ul {
 .contact__channel {
   text-align: center;
   padding: 2rem;
-  background-color: #f8e8e8;
+  background-color: #f5f3f0;
   border-radius: 8px;
   transition: all 0.3s ease;
   border: 2px solid transparent;
 }
 .contact__channel:hover {
   transform: translateY(-5px);
-  border-color: #e8b8b8;
-  background-color: #f8e8e8;
-  box-shadow: 0 4px 12px rgba(232, 184, 184, 0.3);
+  border-color: #f5e8e8;
+  background-color: #f5e8e8;
+  box-shadow: 0 4px 12px rgba(212, 165, 165, 0.2);
 }
 .contact__message {
   text-align: center;
   padding: 2rem;
-  background-color: #f8e8e8;
+  background-color: #f5f3f0;
   border-radius: 8px;
 }
 .contact__reassurance {
-  color: #333333;
+  color: #6b6b6b;
   line-height: 1.8;
   font-size: 1.1rem;
 }
@@ -707,16 +704,16 @@ ul {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #000000;
+  color: #1a1a1a;
 }
 .channel__text {
-  color: #333333;
+  color: #6b6b6b;
   margin-bottom: 1.5rem;
 }
 
 .footer {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #1a1a1a;
+  color: #fefefe;
   padding: 3rem 0 1.5rem;
   margin-top: 4rem;
 }
@@ -755,7 +752,7 @@ ul {
   transition: color 0.3s ease;
 }
 .footer__links li a:hover {
-  color: #ffffff;
+  color: #fefefe;
 }
 .footer__bottom {
   text-align: center;
@@ -791,7 +788,7 @@ ul {
 }
 .order-modal__content {
   position: relative;
-  background-color: #ffffff;
+  background-color: #fefefe;
   border-radius: 12px;
   padding: 2rem;
   max-width: 500px;
@@ -806,7 +803,7 @@ ul {
   background: none;
   border: none;
   font-size: 2rem;
-  color: #333333;
+  color: #6b6b6b;
   cursor: pointer;
   width: 40px;
   height: 40px;
@@ -817,14 +814,14 @@ ul {
   transition: all 0.3s ease;
 }
 .order-modal__close:hover {
-  background-color: #f8e8e8;
-  color: #d4a0a0;
+  background-color: #f5e8e8;
+  color: #c89696;
 }
 .order-modal__title {
   font-size: 1.75rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  color: #000000;
+  color: #1a1a1a;
   font-family: "Playfair Display", "Georgia", serif;
   text-align: center;
 }
@@ -838,18 +835,18 @@ ul {
   align-items: center;
   gap: 1rem;
   padding: 1.25rem;
-  border: 2px solid #e0d0d0;
+  border: 2px solid #e8e4df;
   border-radius: 8px;
   text-decoration: none;
-  color: #000000;
+  color: #2c2c2c;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 .order-modal__option:hover {
-  border-color: #e8b8b8;
-  background-color: #f8e8e8;
+  border-color: #c89696;
+  background-color: #f5e8e8;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(232, 184, 184, 0.35);
+  box-shadow: 0 4px 12px rgba(212, 165, 165, 0.25);
 }
 .order-modal__option--phone {
   cursor: pointer;
@@ -865,25 +862,25 @@ ul {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.25rem;
-  color: #000000;
+  color: #1a1a1a;
 }
 .order-modal__text p {
   font-size: 0.9rem;
-  color: #333333;
+  color: #6b6b6b;
   margin: 0;
 }
 .order-modal__phone {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #a68b5b;
   margin: 0.5rem 0;
   font-family: monospace;
 }
 .order-modal__copy-btn {
   margin-top: 0.5rem;
   padding: 0.5rem 1rem;
-  background-color: #ffffff;
-  color: #ffffff;
+  background-color: #a68b5b;
+  color: #fefefe;
   border: none;
   border-radius: 4px;
   font-size: 0.9rem;
@@ -892,7 +889,7 @@ ul {
   transition: all 0.3s ease;
 }
 .order-modal__copy-btn:hover {
-  background-color: rgb(229.5, 229.5, 229.5);
+  background-color: rgb(149.9335968379, 125.2494071146, 81.3664031621);
 }
 
 @keyframes modalSlideIn {
@@ -920,11 +917,11 @@ ul {
   font-style: italic;
   letter-spacing: 1px;
   font-size: 1.1rem;
-  color: #000000;
+  color: #1a1a1a;
   transition: color 0.3s ease;
 }
 .nav__logo-text:hover {
-  color: #ffffff;
+  color: #a68b5b;
 }
 
 .channel__phone {
@@ -936,7 +933,7 @@ ul {
 .channel__phone-number {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #a68b5b;
   font-family: monospace;
   margin: 0;
 }

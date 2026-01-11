@@ -1,17 +1,17 @@
 @use "sass:color";
 
-// Variables - Palette rose stratégique, blanc, noir
-$primary-color: #000000; // Noir pur
-$secondary-color: #ffffff; // Blanc pur
-$rose-bg: #f8e8e8; // Fond rose stratégique
-$rose-main: #e8b8b8; // Rose principal
-$rose-dark: #d4a0a0; // Rose foncé
-$rose-accent: #c88a8a; // Rose accent
-$text-color: #000000; // Noir
-$text-light: #333333; // Gris foncé
-$bg-color: #ffffff; // Blanc
-$bg-light: #f8e8e8; // Fond rose léger
-$border-color: #e0d0d0; // Bordure rose très clair
+// Variables - Couleurs sobres et féminines
+$primary-color: #1a1a1a; // Noir profond
+$secondary-color: #a68b5b; // Brun chaud
+$accent-color: #c9a882; // Beige chaud
+$rose-color: #d4a5a5; // Rose sobre et professionnel
+$rose-light: #f5e8e8; // Rose très clair pour fonds
+$rose-accent: #c89696; // Rose accent plus foncé
+$text-color: #2c2c2c; // Noir doux
+$text-light: #6b6b6b; // Gris doux
+$bg-color: #fefefe; // Blanc ivoire
+$bg-light: #f5f3f0; // Beige très clair
+$border-color: #e8e4df; // Beige clair
 $font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 $font-heading: 'Playfair Display', 'Georgia', serif;
 
@@ -86,8 +86,8 @@ ul {
 
 // Header & Navigation
 .header {
-  background-color: $rose-bg;
-  box-shadow: 0 2px 10px rgba(232, 184, 184, 0.2);
+  background-color: $bg-color;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -169,13 +169,12 @@ ul {
         font-weight: 500;
 
         &:hover {
-          color: $rose-main;
+          color: $rose-accent;
         }
         
         &.active {
-          color: $primary-color;
+          color: $rose-accent;
           position: relative;
-          font-weight: 600;
           
           &::after {
             content: '';
@@ -184,7 +183,7 @@ ul {
             left: 0;
             right: 0;
             height: 2px;
-            background-color: $rose-main;
+            background-color: $rose-color;
           }
         }
 
@@ -201,26 +200,25 @@ ul {
   @include button-base;
 
   &--primary {
-    background-color: $primary-color;
-    color: $secondary-color;
+    background-color: $secondary-color;
+    color: $bg-color;
 
     &:hover {
-      background-color: $rose-main;
-      color: $primary-color;
+      background-color: color.scale($secondary-color, $lightness: -10%);
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(232, 184, 184, 0.4);
+      box-shadow: 0 4px 12px rgba(139, 115, 85, 0.3);
     }
   }
 
   &--secondary {
     background-color: transparent;
-    color: $primary-color;
-    border: 2px solid $primary-color;
+    color: $secondary-color;
+    border: 2px solid $secondary-color;
 
     &:hover {
-      background-color: $primary-color;
-      color: $secondary-color;
-      transform: translateY(-2px);
+      background-color: $rose-light;
+      border-color: $rose-accent;
+      color: $rose-accent;
     }
   }
 
@@ -243,7 +241,7 @@ ul {
 
 // Hero Section
 .hero {
-  background: $rose-bg;
+  background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
   padding: 4rem 0;
   text-align: center;
 
@@ -270,7 +268,7 @@ ul {
 
   &__subtitle {
     font-size: 1.25rem;
-    color: $primary-color;
+    color: $secondary-color;
     margin-bottom: 1rem;
     font-weight: 600;
   }
@@ -301,26 +299,25 @@ ul {
 .badge {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background-color: $secondary-color;
-  border: 2px solid $primary-color;
+  background-color: $rose-light;
+  border: 1px solid $rose-color;
   border-radius: 20px;
   font-size: 0.9rem;
-  color: $primary-color;
-  font-weight: 600;
+  color: $text-color;
+  font-weight: 500;
   transition: all 0.3s ease;
   
   &:hover {
-    background-color: $primary-color;
-    color: $secondary-color;
+    background-color: $rose-color;
+    color: $bg-color;
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 }
 
 // Features Section
 .features {
   padding: 4rem 0;
-  background-color: $secondary-color;
+  background-color: $bg-color;
 
   &__grid {
     display: grid;
@@ -342,9 +339,9 @@ ul {
 
   &:hover {
     transform: translateY(-5px);
-    border-color: $rose-main;
-    background-color: $rose-bg;
-    box-shadow: 0 4px 12px rgba(232, 184, 184, 0.3);
+    border-color: $rose-light;
+    background-color: $rose-light;
+    box-shadow: 0 4px 12px rgba(212, 165, 165, 0.15);
   }
 
   &__icon {
@@ -368,7 +365,7 @@ ul {
 // Preview Section
 .preview {
   padding: 4rem 0;
-  background-color: $rose-bg;
+  background-color: $bg-light;
 
   &__grid {
     display: grid;
@@ -411,8 +408,8 @@ ul {
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 20px rgba(232, 184, 184, 0.4);
-    border-top: 3px solid $rose-main;
+    box-shadow: 0 4px 20px rgba(212, 165, 165, 0.2);
+    border-top: 3px solid $rose-color;
   }
 
   &__image {
@@ -632,13 +629,13 @@ ul {
     background-color: $bg-light;
 
     &:hover {
-      border-color: $rose-main;
-      box-shadow: 0 2px 8px rgba(232, 184, 184, 0.4);
+      border-color: $rose-color;
+      box-shadow: 0 2px 8px rgba(212, 165, 165, 0.3);
     }
     
     &.active {
-      border-color: $rose-dark;
-      box-shadow: 0 2px 8px rgba(232, 184, 184, 0.5);
+      border-color: $rose-accent;
+      box-shadow: 0 2px 8px rgba(212, 165, 165, 0.4);
     }
   }
 }
@@ -803,9 +800,9 @@ ul {
 
     &:hover {
       transform: translateY(-5px);
-      border-color: $rose-main;
-      background-color: $rose-bg;
-      box-shadow: 0 4px 12px rgba(232, 184, 184, 0.3);
+      border-color: $rose-light;
+      background-color: $rose-light;
+      box-shadow: 0 4px 12px rgba(212, 165, 165, 0.2);
     }
   }
 
@@ -961,8 +958,8 @@ ul {
     transition: all 0.3s ease;
 
     &:hover {
-      background-color: $rose-bg;
-      color: $rose-dark;
+      background-color: $rose-light;
+      color: $rose-accent;
     }
   }
 
@@ -994,10 +991,10 @@ ul {
     cursor: pointer;
 
     &:hover {
-      border-color: $rose-main;
-      background-color: $rose-bg;
+      border-color: $rose-accent;
+      background-color: $rose-light;
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(232, 184, 184, 0.35);
+      box-shadow: 0 4px 12px rgba(212, 165, 165, 0.25);
     }
 
     &--phone {
