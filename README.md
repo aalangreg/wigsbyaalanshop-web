@@ -76,7 +76,8 @@ Les produits sont dans `data/products.json`. Format :
   "texture": "Straight",
   "laceType": "5x5 HD Lace",
   "hairType": "100% Human Hair",
-  "images": ["url1.jpg", "url2.jpg"],
+  "images": ["img/products/produit1-vue1.jpg", "img/products/produit1-vue2.jpg"],
+  "videos": ["videos/products/produit1-demo.mp4"],
   "features": ["Caractéristique 1", "Caractéristique 2"]
 }
 ```
@@ -86,12 +87,14 @@ Valeurs possibles :
 - texture: "Straight", "Body Wave", "Deep Wave", "Loose Wave", "Curly", "Burmese Curly", "Cambodian curly", "Pineapple wave", "Curly Wave", "Italian curly"
 - laceType: "5x5 HD Lace", "4x4 Lace Closure", "13x4 Lace Frontal"
 - hairType: "100% Human Hair", "Raw Hair", "Virgin Hair" (optionnel)
+- images: tableau de chemins vers les images (requis)
+- videos: tableau de chemins vers les vidéos (optionnel) - formats supportés: .mp4, .webm, .ogg, .mov, .avi
 
 ## Fonctionnalités
 
 Catalogue avec filtres (longueur, texture, lace, type de cheveux) et recherche.
 
-Page produit avec galerie d'images et détails.
+Page produit avec galerie d'images et vidéos, et détails.
 
 Menu modal de commande avec 3 options : TikTok, Facebook, ou copie du numéro de téléphone.
 
@@ -101,9 +104,10 @@ Navigation responsive avec menu mobile.
 
 1. Vérifier les liens dans `js/main.js`
 2. Mettre à jour les produits dans `data/products.json`
-3. Remplacer les images placeholder
-4. Compiler le SCSS
-5. Upload sur le serveur
+3. Remplacer les images placeholder par vos vraies images dans `img/products/`
+4. Ajouter vos vidéos dans `videos/products/` (optionnel)
+5. Compiler le SCSS : `cd styles && sass main.scss main.css`
+6. Upload sur le serveur
 
 ## Vocabulaire
 
