@@ -806,6 +806,8 @@ ul {
     gap: 2rem;
     margin-bottom: 3rem;
     width: 100%;
+    margin-left: 0;
+    margin-right: 0;
 
     @include responsive(tablet) {
       grid-template-columns: repeat(3, 1fr);
@@ -825,6 +827,7 @@ ul {
     min-height: 100%;
     width: 100%;
     box-sizing: border-box;
+    margin: 0;
 
     .btn {
       margin-top: auto;
@@ -844,11 +847,11 @@ ul {
 
   &__message {
     text-align: center;
-    padding: 1.5rem 2rem;
+    padding: 2rem;
     background-color: $bg-light;
     border-radius: 8px;
     width: 100%;
-    margin: 0 auto;
+    margin: 0;
     box-sizing: border-box;
   }
 
