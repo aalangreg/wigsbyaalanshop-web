@@ -2,46 +2,38 @@
   "products": [
     {
       "id": 1,
-      "name": "Perruque 13x4 Lace Frontal Longue Straight",
-      "description": "Magnifique perruque 13x4 Lace Frontal avec cheveux longs en texture Straight. Texture soyeuse et naturelle, parfaite pour un look élégant et sophistiqué. Le 13x4 Lace Frontal offre une ligne de cheveux naturelle et invisible sur toute la largeur du front.",
-      "price": 299,
-      "length": "26\"",
+      "name": "Perruque 5x5 HD Lace Wig 24 Inches Straight",
+      "description": "Perruque 5x5 HD Lace Wig en 24 inches, texture Straight. Cheveux lisses, soyeux et naturels pour un rendu élégant et professionnel. La HD Lace 5x5 offre une ligne de cheveux ultra naturelle avec une finition invisible, idéale pour un port quotidien ou des occasions spéciales.",
+      "price": 390.00,
+      "length": "24\"",
       "texture": "Straight",
-      "laceType": "13x4 Lace Frontal",
+      "laceType": "5x5 HD Lace",
       "hairType": "100% Human Hair",
-      "images": [
-        "https://via.placeholder.com/800x600/8B7355/FFFFFF?text=Perruque+13x4+Lace+Frontal",
-        "https://via.placeholder.com/800x600/6B5B4A/FFFFFF?text=Vue+Latérale",
-        "https://via.placeholder.com/800x600/9B8A7A/FFFFFF?text=Vue+Arrière"
-      ],
+      "images": [],
       "features": [
-        "13x4 Lace Frontal invisible",
-        "Cheveux longs et soyeux",
-        "Texture Straight naturelle",
-        "100% Human Hair",
-        "Couleur durable"
+        "5x5 HD Lace invisible",
+        "Texture Straight lisse et soyeuse",
+        "Densité naturelle",
+        "100% cheveux humains",
+        "Peut être coiffée, lissée ou bouclée"
       ]
     },
     {
       "id": 2,
-      "name": "Perruque 5x5 HD Lace Curly",
-      "description": "Perruque 5x5 HD Lace avec de magnifiques boucles définies en texture Curly. Offre une liberté totale de coiffure et un rendu ultra-naturel. Parfaite pour celles qui recherchent un volume et une texture exceptionnels.",
-      "price": 399,
-      "length": "22\"",
-      "texture": "Curly",
+      "name": "Perruque 5x5 HD Lace Wig 24 Inches Body Wave",
+      "description": "Perruque 5x5 HD Lace Wig en 24 inches avec texture Body Wave. Ondulations naturelles, volume équilibré et finition haut de gamme. La HD Lace 5x5 se fond parfaitement au cuir chevelu pour un effet réaliste et indétectable.",
+      "price": 390.00,
+      "length": "24\"",
+      "texture": "Body Wave",
       "laceType": "5x5 HD Lace",
-      "hairType": "Virgin Hair",
-      "images": [
-        "https://via.placeholder.com/800x600/7A6B5A/FFFFFF?text=Perruque+5x5+HD+Lace",
-        "https://via.placeholder.com/800x600/8B7A6A/FFFFFF?text=Détail+Boucles",
-        "https://via.placeholder.com/800x600/6A5B4A/FFFFFF?text=Vue+Complète"
-      ],
+      "hairType": "100% Human Hair",
+      "images": [],
       "features": [
-        "5x5 HD Lace pour coiffures multiples",
-        "Boucles Curly définies et naturelles",
-        "Volume exceptionnel",
-        "Virgin Hair premium",
-        "Qualité exceptionnelle"
+        "5x5 HD Lace ultra fine",
+        "Texture Body Wave naturelle",
+        "Volume élégant et longue tenue",
+        "100% cheveux humains",
+        "Peut être colorée et coiffée"
       ]
     },
     {
