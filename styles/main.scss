@@ -1,17 +1,16 @@
 @use "sass:color";
 
-// Variables - Couleurs sobres et féminines
-$primary-color: #1a1a1a; // Noir profond
-$secondary-color: #a68b5b; // Brun chaud
-$accent-color: #c9a882; // Beige chaud
-$rose-color: #d4a5a5; // Rose sobre et professionnel
-$rose-light: #f5e8e8; // Rose très clair pour fonds
-$rose-accent: #c89696; // Rose accent plus foncé
-$text-color: #2c2c2c; // Noir doux
-$text-light: #6b6b6b; // Gris doux
-$bg-color: #fefefe; // Blanc ivoire
-$bg-light: #f5f3f0; // Beige très clair
-$border-color: #e8e4df; // Beige clair
+// Variables - Palette rose, blanc, noir
+$primary-color: #000000; // Noir
+$secondary-color: #ffffff; // Blanc
+$rose-main: #e8b8b8; // Rose principal
+$rose-light: #f5e8e8; // Rose très clair
+$rose-dark: #d4a5a5; // Rose foncé
+$text-color: #000000; // Noir
+$text-light: #333333; // Gris foncé
+$bg-color: #ffffff; // Blanc
+$bg-light: #f5e8e8; // Rose très clair pour fonds
+$border-color: #e8d0d0; // Rose très clair pour bordures
 $font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 $font-heading: 'Playfair Display', 'Georgia', serif;
 
@@ -110,7 +109,7 @@ ul {
       transition: color 0.3s ease;
       
       &:hover {
-        color: $secondary-color;
+        color: $rose-main;
       }
     }
   }
@@ -169,11 +168,11 @@ ul {
         font-weight: 500;
 
         &:hover {
-          color: $rose-accent;
+          color: $rose-main;
         }
         
         &.active {
-          color: $rose-accent;
+          color: $rose-main;
           position: relative;
           
           &::after {
@@ -183,7 +182,7 @@ ul {
             left: 0;
             right: 0;
             height: 2px;
-            background-color: $rose-color;
+            background-color: $rose-main;
           }
         }
 
@@ -200,11 +199,11 @@ ul {
   @include button-base;
 
   &--primary {
-    background-color: $secondary-color;
+    background-color: $rose-main;
     color: $bg-color;
 
     &:hover {
-      background-color: color.scale($secondary-color, $lightness: -10%);
+      background-color: $rose-dark;
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(139, 115, 85, 0.3);
     }
@@ -212,13 +211,13 @@ ul {
 
   &--secondary {
     background-color: transparent;
-    color: $secondary-color;
-    border: 2px solid $secondary-color;
+    color: $rose-main;
+    border: 2px solid $rose-main;
 
     &:hover {
       background-color: $rose-light;
-      border-color: $rose-accent;
-      color: $rose-accent;
+      border-color: $rose-dark;
+      color: $rose-dark;
     }
   }
 
@@ -228,8 +227,8 @@ ul {
     border: 2px solid $border-color;
 
     &:hover {
-      border-color: $secondary-color;
-      color: $secondary-color;
+      border-color: $rose-main;
+      color: $rose-main;
     }
   }
 }
@@ -268,7 +267,7 @@ ul {
 
   &__subtitle {
     font-size: 1.25rem;
-    color: $secondary-color;
+    color: $primary-color;
     margin-bottom: 1rem;
     font-weight: 600;
   }
@@ -300,7 +299,7 @@ ul {
   display: inline-block;
   padding: 0.5rem 1rem;
   background-color: $rose-light;
-  border: 1px solid $rose-color;
+  border: 1px solid $rose-main;
   border-radius: 20px;
   font-size: 0.9rem;
   color: $text-color;
@@ -308,7 +307,7 @@ ul {
   transition: all 0.3s ease;
   
   &:hover {
-    background-color: $rose-color;
+    background-color: $rose-main;
     color: $bg-color;
     transform: translateY(-2px);
   }
@@ -409,7 +408,7 @@ ul {
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 20px rgba(212, 165, 165, 0.2);
-    border-top: 3px solid $rose-color;
+    border-top: 3px solid $rose-main;
   }
 
   &__image {
@@ -452,13 +451,13 @@ ul {
   &__technical {
     text-transform: none !important;
     font-weight: 600;
-    color: $secondary-color;
+    color: $rose-main;
   }
 
   &__price {
     font-size: 1.5rem;
     font-weight: 700;
-    color: $secondary-color;
+    color: $rose-main;
     margin-bottom: 1rem;
   }
 
@@ -527,7 +526,7 @@ ul {
 
   &:focus {
     outline: none;
-    border-color: $secondary-color;
+    border-color: $rose-main;
   }
 
   @include responsive(tablet) {
@@ -578,12 +577,12 @@ ul {
   &__back {
     display: inline-block;
     margin-bottom: 2rem;
-    color: $secondary-color;
+    color: $rose-main;
     font-weight: 500;
     transition: color 0.3s ease;
 
     &:hover {
-      color: color.scale($secondary-color, $lightness: -10%);
+      color: $rose-dark;
     }
   }
 
@@ -629,12 +628,12 @@ ul {
     background-color: $bg-light;
 
     &:hover {
-      border-color: $rose-color;
+      border-color: $rose-main;
       box-shadow: 0 2px 8px rgba(212, 165, 165, 0.3);
     }
     
     &.active {
-      border-color: $rose-accent;
+      border-color: $rose-dark;
       box-shadow: 0 2px 8px rgba(212, 165, 165, 0.4);
     }
   }
@@ -652,7 +651,7 @@ ul {
   &__price {
     font-size: 2.5rem;
     font-weight: 700;
-    color: $secondary-color;
+    color: $rose-main;
     margin-bottom: 1.5rem;
   }
 
@@ -981,7 +980,7 @@ ul {
 
     &:hover {
       background-color: $rose-light;
-      color: $rose-accent;
+      color: $rose-dark;
     }
   }
 
@@ -1013,7 +1012,7 @@ ul {
     cursor: pointer;
 
     &:hover {
-      border-color: $rose-accent;
+      border-color: $rose-dark;
       background-color: $rose-light;
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(212, 165, 165, 0.25);
@@ -1049,7 +1048,7 @@ ul {
   &__phone {
     font-size: 1.25rem;
     font-weight: 600;
-    color: $secondary-color;
+    color: $rose-main;
     margin: 0.5rem 0;
     font-family: monospace;
   }
@@ -1057,7 +1056,7 @@ ul {
   &__copy-btn {
     margin-top: 0.5rem;
     padding: 0.5rem 1rem;
-    background-color: $secondary-color;
+    background-color: $rose-main;
     color: $bg-color;
     border: none;
     border-radius: 4px;
@@ -1067,7 +1066,7 @@ ul {
     transition: all 0.3s ease;
 
     &:hover {
-      background-color: color.scale($secondary-color, $lightness: -10%);
+      background-color: $rose-dark;
     }
   }
 }
@@ -1104,7 +1103,7 @@ ul {
     transition: color 0.3s ease;
 
     &:hover {
-      color: $secondary-color;
+      color: $rose-main;
     }
   }
 }
@@ -1118,7 +1117,7 @@ ul {
   &-number {
     font-size: 1.25rem;
     font-weight: 600;
-    color: $secondary-color;
+    color: $rose-main;
     font-family: monospace;
     margin: 0;
   }
