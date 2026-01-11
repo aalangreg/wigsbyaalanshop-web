@@ -30,14 +30,14 @@ function initOrderMenu() {
                 <a href="${dmLinks.tiktok}" class="order-modal__option" target="_blank" rel="noopener noreferrer">
                     <div class="order-modal__icon">📱</div>
                     <div class="order-modal__text">
-                        <h3>Via TikTok</h3>
+                        <h3>TikTok</h3>
                         <p>Envoyez-nous un message privé</p>
                     </div>
                 </a>
                 <a href="${dmLinks.facebook}" class="order-modal__option" target="_blank" rel="noopener noreferrer">
                     <div class="order-modal__icon">👥</div>
                     <div class="order-modal__text">
-                        <h3>Via Facebook</h3>
+                        <h3>Facebook</h3>
                         <p>Écrivez-nous en message privé</p>
                     </div>
                 </a>
