@@ -722,7 +722,8 @@ ul {
   padding: 2.5rem 3rem;
   background-color: #f5e8e8;
   border-radius: 8px;
-  max-width: 800px;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
 }
 .contact__reassurance {
