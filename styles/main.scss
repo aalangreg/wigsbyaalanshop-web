@@ -4,6 +4,9 @@
 $primary-color: #1a1a1a; // Noir profond
 $secondary-color: #a68b5b; // Brun chaud
 $accent-color: #c9a882; // Beige chaud
+$rose-color: #d4a5a5; // Rose sobre et professionnel
+$rose-light: #f5e8e8; // Rose très clair pour fonds
+$rose-accent: #c89696; // Rose accent plus foncé
 $text-color: #2c2c2c; // Noir doux
 $text-light: #6b6b6b; // Gris doux
 $bg-color: #fefefe; // Blanc ivoire
@@ -165,9 +168,23 @@ ul {
         transition: color 0.3s ease;
         font-weight: 500;
 
-        &:hover,
+        &:hover {
+          color: $rose-accent;
+        }
+        
         &.active {
-          color: $secondary-color;
+          color: $rose-accent;
+          position: relative;
+          
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: $rose-color;
+          }
         }
 
         @include responsive(tablet) {
@@ -199,8 +216,9 @@ ul {
     border: 2px solid $secondary-color;
 
     &:hover {
-      background-color: $secondary-color;
-      color: $bg-color;
+      background-color: $rose-light;
+      border-color: $rose-accent;
+      color: $rose-accent;
     }
   }
 
@@ -281,12 +299,19 @@ ul {
 .badge {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background-color: $bg-light;
-  border: 1px solid $border-color;
+  background-color: $rose-light;
+  border: 1px solid $rose-color;
   border-radius: 20px;
   font-size: 0.9rem;
   color: $text-color;
   font-weight: 500;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: $rose-color;
+    color: $bg-color;
+    transform: translateY(-2px);
+  }
 }
 
 // Features Section
@@ -309,10 +334,14 @@ ul {
   text-align: center;
   padding: 2rem;
   border-radius: 8px;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
 
   &:hover {
     transform: translateY(-5px);
+    border-color: $rose-light;
+    background-color: $rose-light;
+    box-shadow: 0 4px 12px rgba(212, 165, 165, 0.15);
   }
 
   &__icon {
@@ -379,7 +408,8 @@ ul {
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 4px 20px rgba(212, 165, 165, 0.2);
+    border-top: 3px solid $rose-color;
   }
 
   &__image {
@@ -598,9 +628,14 @@ ul {
     transition: all 0.3s ease;
     background-color: $bg-light;
 
-    &:hover,
+    &:hover {
+      border-color: $rose-color;
+      box-shadow: 0 2px 8px rgba(212, 165, 165, 0.3);
+    }
+    
     &.active {
-      border-color: $secondary-color;
+      border-color: $rose-accent;
+      box-shadow: 0 2px 8px rgba(212, 165, 165, 0.4);
     }
   }
 }
@@ -760,10 +795,14 @@ ul {
     padding: 2rem;
     background-color: $bg-light;
     border-radius: 8px;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
 
     &:hover {
       transform: translateY(-5px);
+      border-color: $rose-light;
+      background-color: $rose-light;
+      box-shadow: 0 4px 12px rgba(212, 165, 165, 0.2);
     }
   }
 
@@ -919,8 +958,8 @@ ul {
     transition: all 0.3s ease;
 
     &:hover {
-      background-color: $bg-light;
-      color: $primary-color;
+      background-color: $rose-light;
+      color: $rose-accent;
     }
   }
 
@@ -952,10 +991,10 @@ ul {
     cursor: pointer;
 
     &:hover {
-      border-color: $secondary-color;
-      background-color: $bg-light;
+      border-color: $rose-accent;
+      background-color: $rose-light;
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px rgba(212, 165, 165, 0.25);
     }
 
     &--phone {
