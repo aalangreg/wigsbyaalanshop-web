@@ -47,7 +47,7 @@ function displayProduct(product) {
             <div class="product-info__specs">
                 <div class="product-info__spec">
                     <span class="product-info__spec-label">Longueur :</span>
-                    <span class="product-info__spec-value">${product.length}</span>
+                    <span class="product-info__spec-value product-info__spec-value--technical">${product.length}</span>
                 </div>
                 <div class="product-info__spec">
                     <span class="product-info__spec-label">Texture :</span>
