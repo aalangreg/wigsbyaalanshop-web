@@ -1,12 +1,9 @@
-// Home page - Display preview products
+// page d'accueil - aperçu des produits
 document.addEventListener('DOMContentLoaded', async function() {
     const previewGrid = document.getElementById('previewGrid');
-    
     if (!previewGrid) return;
 
     const products = await loadProducts();
-    
-    // Display first 6 products
     const previewProducts = products.slice(0, 6);
     
     if (previewProducts.length === 0) {
@@ -16,8 +13,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     previewGrid.innerHTML = previewProducts.map(product => `
         <div class="product-card">
-            <img src="${product.images[0]}" alt="${product.name}" class="product-card__image" 
-                 onerror="this.src='https://via.placeholder.com/400x300/f0f0f0/999999?text=Image+non+disponible'">
+            <img src="${product.images[0] || ''}" alt="${product.name}" class="product-card__image" onerror="this.style.display='none';">
             <div class="product-card__content">
                 <h3 class="product-card__name">${product.name}</h3>
                 <div class="product-card__details">
@@ -27,9 +23,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                     ${product.hairType ? `<span class="product-card__hair-type">${product.hairType}</span>` : ''}
                 </div>
                 <div class="product-card__price">${formatPrice(product.price)}</div>
-                <a href="product.html?id=${product.id}" class="btn btn--primary product-card__button">
-                    Voir les détails
-                </a>
+                <a href="product.html?id=${product.id}" class="btn btn--primary product-card__button">Voir les détails</a>
             </div>
         </div>
     `).join('');

@@ -1,12 +1,12 @@
 # wigsbyaalanshop-web
 
-Site web pour boutique de perruques lace premium au Canada.
+Site web pour la boutique de perruques lace premium au Canada.
 
-## Ce que c'est
+## Description
 
-Site statique en HTML/CSS/JS vanilla. Catalogue de produits avec filtres et commandes via DM (TikTok, Facebook, téléphone).
+J'ai fait un site statique en HTML/CSS/JS vanilla. Pas de framework, juste du code simple. Le catalogue permet de filtrer les produits et les commandes se font via DM (TikTok, Facebook).
 
-## Structure
+## Structure du projet
 
 ```
 wigsbyaalanshop-web/
@@ -16,7 +16,8 @@ wigsbyaalanshop-web/
 ├── about.html
 ├── contact.html
 ├── data/products.json
-├── img/logo-de-WIGSBYAALANSHOP.svg
+├── img/
+│   └── logo-de-WIGSBYAALANSHOP.svg
 ├── js/
 │   ├── main.js
 │   ├── catalogue.js
@@ -28,95 +29,159 @@ wigsbyaalanshop-web/
     └── main.css
 ```
 
-## Setup
+## Installation
 
-Pas de dépendances, juste des fichiers statiques.
+Pas besoin d'installer quoi que ce soit, c'est juste des fichiers statiques. Pour compiler le SCSS :
 
-Pour compiler le SCSS :
-
-Compile le SCSS :
 ```bash
-cd styles && sass main.scss main.css
+sass styles/main.scss styles/main.css
 ```
 
-Ou en mode watch :
+Ou en mode watch si tu veux que ça se recompile automatiquement :
 
 ```bash
 sass --watch styles/main.scss styles/main.css
 ```
 
-## Config
+## Configuration
 
-### Liens de contact
+### Modifier les liens de contact
 
-Modifier `getDMLinks()` dans `js/main.js` :
+Tout est dans `js/main.js`, fonction `getDMLinks()`. Tu peux changer les URLs TikTok, Facebook, email et téléphone là-dedans.
 
-```javascript
-function getDMLinks() {
-    return {
-        tiktok: 'https://www.tiktok.com/@wigsbyaalanshop?_r=1&_t=ZS-92y35aCBduz',
-        facebook: 'https://www.facebook.com/share/1FJoRQaJHw/?mibextid=wwXIfr',
-        email: 'contactpro@aalanshop.com',
-        phone: '+1 (514) 260-7145'
-    };
-}
-```
+### Ajouter/modifier des produits
 
-### Produits
-
-Les produits sont dans `data/products.json`. Format :
+Les produits sont dans `data/products.json`. Chaque produit a cette structure :
 
 ```json
 {
   "id": 1,
   "name": "Nom du produit",
-  "description": "Description",
+  "description": "Description du produit",
   "price": 299,
-  "length": "longue",
+  "length": "24\"",
   "texture": "Straight",
   "laceType": "5x5 HD Lace",
   "hairType": "100% Human Hair",
-  "images": ["img/products/produit1-vue1.jpg", "img/products/produit1-vue2.jpg"],
-  "videos": ["videos/products/produit1-demo.mp4"],
+  "images": ["img/produit1.jpg"],
+  "videos": ["img/produit1.mp4"],
   "features": ["Caractéristique 1", "Caractéristique 2"]
 }
 ```
 
-Valeurs possibles :
-- length: "courte", "moyenne", "longue", "très longue"
-- texture: "Straight", "Body Wave", "Deep Wave", "Loose Wave", "Curly", "Burmese Curly", "Cambodian curly", "Pineapple wave", "Curly Wave", "Italian curly"
-- laceType: "5x5 HD Lace", "4x4 Lace Closure", "13x4 Lace Frontal"
-- hairType: "100% Human Hair", "Raw Hair", "Virgin Hair" (optionnel)
-- images: tableau de chemins vers les images (requis)
-- videos: tableau de chemins vers les vidéos (optionnel) - formats supportés: .mp4, .webm, .ogg, .mov, .avi
+**Longueurs possibles :** "18\"", "20\"", "22\"", "24\"", "26\"", "28\"", "30\""
+
+**Textures :** Straight, Body Wave, Deep Wave, Loose Wave, Burmese Curly, Cambodian Curly, Pineapple Wave, Curly Wave, Italian Curly
+
+**Types de lace :** 5x5 HD Lace, 5x5 HD Lace Closure, 4x4 Lace Closure, 13x4 HD Lace Frontal, 13x6 HD Lace Frontal
+
+**Types de cheveux :** 100% Human Hair, Raw Hair, Virgin Hair (optionnel)
+
+**Images :** Tableau de chemins. J'utilise `img/disposurcomm.svg` pour les produits pas encore disponibles.
+
+**Vidéos :** Optionnel, formats supportés : .mp4, .webm, .ogg, .mov, .avi
 
 ## Fonctionnalités
 
-Catalogue avec filtres (longueur, texture, lace, type de cheveux) et recherche.
-
-Page produit avec galerie d'images et vidéos, et détails.
-
-Menu modal de commande avec 3 options : TikTok, Facebook, ou copie du numéro de téléphone.
-
-Navigation responsive avec menu mobile.
+- Catalogue avec filtres (longueur, texture, lace, type de cheveux) + recherche
+- Page produit avec galerie images/vidéos
+- Modal de commande (TikTok, Facebook)
+- Menu responsive mobile
 
 ## Déploiement
 
-1. Vérifier les liens dans `js/main.js`
-2. Mettre à jour les produits dans `data/products.json`
-3. Remplacer les images placeholder par vos vraies images dans `img/products/`
-4. Ajouter vos vidéos dans `videos/products/` (optionnel)
-5. Compiler le SCSS : `cd styles && sass main.scss main.css`
-6. Upload sur le serveur
+1. Vérifie les liens dans `js/main.js`
+2. Mets à jour les produits dans `data/products.json`
+3. Ajoute tes images dans `img/` (j'ai organisé par produit : `img/imgproductsid1/`, `img/imgproductsid2/`, etc.)
+4. Même chose pour les vidéos
+5. Pour les produits pas encore dispo, j'utilise `img/disposurcomm.svg`
+6. Compile le SCSS : `sass styles/main.scss styles/main.css`
+7. Upload sur ton serveur
+
+## Notes importantes
+
+- Les chemins d'images/vidéos dans `products.json` doivent être relatifs à la racine (ex: `img/image.jpg`, pas `../img/image.jpg`) - j'ai eu des problèmes avec ça au début
+- J'ai fait le code réutilisable pour Shopify si besoin (fonctions globales dans `main.js`)
+- J'ai mis les commentaires en français et en minuscule, c'est plus lisible pour moi
+
+## Spécificités techniques
+
+### Architecture JavaScript
+
+**Vanilla JS ES6+** : Pas de framework, juste du JavaScript moderne avec :
+- **Async/await** pour les opérations asynchrones (chargement du JSON via Fetch API)
+- **Arrow functions** et **template literals** pour la génération dynamique de HTML
+- **Event delegation** et **event listeners** pour la gestion des interactions
+- **Closures** pour encapsuler les variables d'état (ex: `allProducts`, `filteredProducts` dans `catalogue.js`)
+
+**Pattern modulaire** : Chaque page a son propre fichier JS (`home.js`, `catalogue.js`, `product.js`) qui s'initialise au `DOMContentLoaded`. Les fonctions utilitaires sont dans `main.js` et exposées globalement via `window` pour réutilisation.
+
+**Gestion d'état** : Pas de state management complexe, juste des variables locales dans chaque module. Les filtres utilisent un pattern de **filtering pipeline** avec chaînage de conditions.
+
+**Parsing d'URL** : Utilisation de `URLSearchParams` pour extraire l'ID produit depuis la query string (`product.html?id=1`).
+
+### Architecture CSS/SCSS
+
+**BEM (Block Element Modifier)** : Toute la nomenclature CSS suit BEM (ex: `.product-card__image`, `.nav__toggle--active`). Ça facilite la maintenance et évite les conflits de styles.
+
+**SCSS avec mixins** : J'utilise des mixins réutilisables pour les breakpoints responsive (`@mixin responsive($breakpoint)`) et les patterns communs (`@mixin flex-center`, `@mixin container`, `@mixin button-base`).
+
+**Variables SCSS** : Palette de couleurs centralisée dans des variables (`$primary-color`, `$secondary-color`, etc.) pour faciliter les changements de thème.
+
+**Pseudo-éléments** : Le filigrane utilise `body::before` avec `position: fixed` et `z-index: 0` pour rester en arrière-plan sans affecter le contenu.
+
+**Flexbox/Grid** : Layout moderne avec CSS Grid pour les grilles de produits et Flexbox pour les alignements. Pas de float ou de positionnement absolu complexe.
+
+### Patterns de code
+
+**Template literals pour HTML dynamique** : Génération de HTML via template strings plutôt que `createElement` pour plus de lisibilité :
+```javascript
+productsGrid.innerHTML = filteredProducts.map(product => `
+    <div class="product-card">
+        <img src="${product.images[0]}" alt="${product.name}">
+        ...
+    </div>
+`).join('');
+```
+
+**Error handling** : Gestion d'erreurs avec `try/catch` pour le fetch, et `onerror` sur les images/vidéos pour masquer les médias manquants.
+
+**Conditional rendering** : Utilisation d'opérateurs ternaires et de `&&` pour le rendu conditionnel dans les templates.
+
+**Media type detection** : Fonction `isVideo()` qui détecte le type de média via l'extension du fichier pour afficher soit `<img>` soit `<video>`.
+
+### Performance
+
+**Lazy loading implicite** : Les images se chargent au fur et à mesure, pas de lazy loading explicite mais ça pourrait être ajouté.
+
+**Pas de bundler** : Fichiers JS séparés chargés individuellement. Pour la prod, tu pourrais bundler avec Webpack/Vite si besoin.
+
+**CSS compilé** : Le SCSS est précompilé en CSS, pas de compilation à la volée côté client.
+
+### Réutilisabilité
+
+**API globale** : Fonctions exposées sur `window` (`window.loadProducts`, `window.formatPrice`, etc.) pour intégration facile dans d'autres projets (Shopify, WordPress, etc.).
+
+**Séparation des concerns** : Logique métier séparée de la présentation. Les données viennent du JSON, le JS génère le HTML, le CSS gère le style.
+
+**Pas de dépendances** : Code 100% vanilla, facile à intégrer n'importe où sans gestion de dépendances.
 
 ## Vocabulaire
 
-Le site utilise le vocabulaire technique du marché :
-- Textures : Straight, Body Wave, Deep Wave, Loose Wave, Curly, Burmese Curly, Cambodian curly, Pineapple wave, Curly Wave, Italian curly
-- Lace : 5x5 HD Lace, 4x4 Lace Closure, 13x4 Lace Frontal
-- Cheveux : 100% Human Hair, Raw Hair, Virgin Hair
+J'utilise le vocabulaire technique du marché, pas de termes génériques. La clientèle connaît les perruques.
 
-Pas de termes génériques, clientèle experte.
+**Textures :** Straight, Body Wave, Deep Wave, Loose Wave, Burmese Curly, Cambodian Curly, Pineapple Wave, Curly Wave, Italian Curly
+
+**Lace :** 5x5 HD Lace, 5x5 HD Lace Closure, 4x4 Lace Closure, 13x4 HD Lace Frontal, 13x6 HD Lace Frontal
+
+**Cheveux :** 100% Human Hair, Raw Hair, Virgin Hair
+
+## Design
+
+- J'ai mis un filigrane avec le logo en arrière-plan (flou, discret)
+- Couleurs : noir, rose (#e91e63), blanc
+- Responsive (mobile, tablette, desktop)
+- Menu sticky avec burger menu sur mobile
 
 ## Contact
 
@@ -124,4 +189,4 @@ Pas de termes génériques, clientèle experte.
 - Facebook: https://www.facebook.com/share/1FJoRQaJHw/
 - Email: contactpro@aalanshop.com
 
-Copyright 2026 WIGS BY AALAN SHOP. Tous droits réservés.
+© 2026 WIGS BY AALAN SHOP. Tous droits réservés.

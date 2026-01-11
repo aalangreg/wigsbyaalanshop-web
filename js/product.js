@@ -1,4 +1,4 @@
-// Product page - Display single product details
+// page produit - affichage des détails d'un produit
 document.addEventListener('DOMContentLoaded', async function() {
     const urlParams = new URLSearchParams(window.location.search);
     const productId = parseInt(urlParams.get('id'));
@@ -19,25 +19,19 @@ document.addEventListener('DOMContentLoaded', async function() {
     displayProduct(product);
 });
 
+// détecter si un fichier est une vidéo
+function isVideo(url) {
+    if (!url) return false;
+    const videoExtensions = ['.mp4', '.webm', '.ogg', '.mov', '.avi'];
+    return videoExtensions.some(ext => url.toLowerCase().includes(ext));
+}
+
+// afficher le produit avec galerie images/vidéos
 function displayProduct(product) {
     const productContent = document.getElementById('productContent');
-    const dmLinks = getDMLinks();
-    let currentImageIndex = 0;
-
-    // Combine images and videos if videos array exists
     const media = product.images || [];
     const videos = product.videos || [];
     const allMedia = [...media, ...videos];
-
-    // Helper function to check if a file is a video
-    function isVideo(url) {
-        if (!url) return false;
-        const videoExtensions = ['.mp4', '.webm', '.ogg', '.mov', '.avi'];
-        const lowerUrl = url.toLowerCase();
-        return videoExtensions.some(ext => lowerUrl.includes(ext));
-    }
-
-    // Get first media item
     const firstMedia = allMedia[0] || (media[0] || '');
     const isFirstVideo = isVideo(firstMedia);
 
@@ -52,16 +46,16 @@ function displayProduct(product) {
                            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                         Votre navigateur ne supporte pas la lecture de vidéos.
                     </video>
-                    <img id="mainImage" src="${media[0] || 'https://via.placeholder.com/800x600/f0f0f0/999999?text=Image+non+disponible'}" 
+                    <img id="mainImage" src="${media[0] || ''}" 
                          alt="${product.name}" 
                          class="product-gallery__main-image"
                          style="display: none;"
-                         onerror="this.src='https://via.placeholder.com/800x600/f0f0f0/999999?text=Image+non+disponible'">
+                         onerror="this.style.display='none';">
                 ` : `
-                    <img id="mainImage" src="${firstMedia || 'https://via.placeholder.com/800x600/f0f0f0/999999?text=Image+non+disponible'}" 
+                    <img id="mainImage" src="${firstMedia || ''}" 
                          alt="${product.name}" 
                          class="product-gallery__main-image"
-                         onerror="this.src='https://via.placeholder.com/800x600/f0f0f0/999999?text=Image+non+disponible'">
+                         onerror="this.style.display='none';">
                     <video id="mainMedia" src="" 
                            class="product-gallery__main-image" 
                            controls
@@ -74,16 +68,14 @@ function displayProduct(product) {
             <div class="product-gallery__thumbnails">
                 ${allMedia.map((item, index) => {
                     const isItemVideo = isVideo(item);
-                    const thumbnailSrc = isItemVideo ? (media[0] || 'https://via.placeholder.com/200x150/f0f0f0/999999?text=Video') : item;
+                    const thumbnailSrc = isItemVideo ? (media[0] || '') : item;
                     return `
                         <div class="product-gallery__thumbnail-wrapper ${index === 0 ? 'active' : ''}" data-index="${index}">
-                            ${isItemVideo ? `
-                                <div class="product-gallery__thumbnail-video-indicator">▶</div>
-                            ` : ''}
+                            ${isItemVideo ? `<div class="product-gallery__thumbnail-video-indicator">▶</div>` : ''}
                             <img src="${thumbnailSrc}" 
                                  alt="${product.name} - ${isItemVideo ? 'Vidéo' : 'Vue'} ${index + 1}" 
                                  class="product-gallery__thumbnail"
-                                 onerror="this.src='https://via.placeholder.com/200x150/f0f0f0/999999?text=${isItemVideo ? 'Video' : 'Image'}+non+disponible'">
+                                 onerror="this.style.display='none';">
                         </div>
                     `;
                 }).join('')}
@@ -130,23 +122,14 @@ function displayProduct(product) {
     `;
 
     productContent.innerHTML = productHTML;
-
-    // Setup media gallery (images and videos)
     setupMediaGallery(allMedia);
 }
 
+// configurer la galerie média (images et vidéos)
 function setupMediaGallery(media) {
     const thumbnails = document.querySelectorAll('.product-gallery__thumbnail-wrapper');
     const mainImage = document.getElementById('mainImage');
     const mainMedia = document.getElementById('mainMedia');
-
-    // Helper function to check if a file is a video
-    function isVideo(url) {
-        if (!url) return false;
-        const videoExtensions = ['.mp4', '.webm', '.ogg', '.mov', '.avi'];
-        const lowerUrl = url.toLowerCase();
-        return videoExtensions.some(ext => lowerUrl.includes(ext));
-    }
 
     thumbnails.forEach(thumbnail => {
         thumbnail.addEventListener('click', function() {
@@ -155,17 +138,13 @@ function setupMediaGallery(media) {
             const isVideoItem = isVideo(mediaItem);
             
             if (isVideoItem) {
-                // Show video, hide image
                 if (mainMedia) {
                     mainMedia.src = mediaItem;
                     mainMedia.style.display = 'block';
-                    mainMedia.load(); // Reload video
+                    mainMedia.load();
                 }
-                if (mainImage) {
-                    mainImage.style.display = 'none';
-                }
+                if (mainImage) mainImage.style.display = 'none';
             } else {
-                // Show image, hide video
                 if (mainImage) {
                     mainImage.src = mediaItem;
                     mainImage.style.display = 'block';
@@ -177,7 +156,6 @@ function setupMediaGallery(media) {
                 }
             }
 
-            // Update active thumbnail
             thumbnails.forEach(thumb => thumb.classList.remove('active'));
             this.classList.add('active');
         });

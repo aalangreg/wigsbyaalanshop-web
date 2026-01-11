@@ -1,17 +1,13 @@
-// Order menu functionality
+// menu de commande - modal avec options de contact
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize order menu modal
     initOrderMenu();
-    
-    // Setup all "Commander via DM" buttons
     setupOrderButtons();
 });
 
-// Initialize order menu modal
+// initialiser le menu de commande
 function initOrderMenu() {
     const dmLinks = getDMLinks();
     
-    // Create modal if it doesn't exist
     let modal = document.getElementById('orderModal');
     if (!modal) {
         modal = document.createElement('div');
@@ -20,7 +16,6 @@ function initOrderMenu() {
         document.body.appendChild(modal);
     }
     
-    // Update modal content
     modal.innerHTML = `
         <div class="order-modal__overlay" onclick="closeOrderMenu()"></div>
         <div class="order-modal__content">
@@ -46,20 +41,19 @@ function initOrderMenu() {
     `;
 }
 
+// configurer les boutons de commande
 function setupOrderButtons() {
-    // Find all order buttons and replace their behavior
-    const orderButtons = document.querySelectorAll('[data-order-btn], .btn[href*="contact"], .btn:contains("Commander via DM")');
-    
-    // Also check for buttons with text "Commander via DM"
     document.querySelectorAll('a.btn, button.btn').forEach(btn => {
-        if (btn.textContent.includes('Commander via DM') || btn.textContent.includes('Commander')) {
-            if (!btn.hasAttribute('data-order-btn-setup')) {
-                btn.setAttribute('data-order-btn-setup', 'true');
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    showOrderMenu();
-                });
-            }
+        if ((btn.textContent.includes('Commander via DM') || btn.textContent.includes('Commander')) && 
+            !btn.hasAttribute('data-order-btn-setup')) {
+            btn.setAttribute('data-order-btn-setup', 'true');
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                showOrderMenu();
+            });
         }
     });
 }
+
+// rendre la fonction accessible globalement pour shopify
+window.initOrderMenu = initOrderMenu;

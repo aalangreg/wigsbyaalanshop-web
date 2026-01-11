@@ -131,25 +131,9 @@
         </div>
     </footer>
 
-    <!-- Order Modal -->
     <div id="orderModal" class="order-modal"></div>
     
     <script src="js/main.js"></script>
     <script src="js/order-menu.js"></script>
-    <script>
-        // Update contact links dynamically
-        document.addEventListener('DOMContentLoaded', function() {
-            const dmLinks = getDMLinks();
-            const tiktokLink = document.getElementById('tiktokLink');
-            const facebookLink = document.getElementById('facebookLink');
-            
-            if (tiktokLink) {
-                tiktokLink.href = dmLinks.tiktok;
-            }
-            if (facebookLink) {
-                facebookLink.href = dmLinks.facebook;
-            }
-        });
-    </script>
 </body>
 </html>

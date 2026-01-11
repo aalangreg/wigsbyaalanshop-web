@@ -1,20 +1,19 @@
-// Catalogue page - Display all products with filters
+// page catalogue - affichage des produits avec filtres
 let allProducts = [];
 let filteredProducts = [];
 
 document.addEventListener('DOMContentLoaded', async function() {
     allProducts = await loadProducts();
     filteredProducts = [...allProducts];
-    
     displayProducts();
     setupFilters();
     updateProductsCount();
 });
 
+// afficher les produits filtrés
 function displayProducts() {
     const productsGrid = document.getElementById('productsGrid');
     const noResults = document.getElementById('noResults');
-    
     if (!productsGrid) return;
 
     if (filteredProducts.length === 0) {
@@ -25,12 +24,9 @@ function displayProducts() {
 
     if (noResults) noResults.style.display = 'none';
 
-    const dmLinks = getDMLinks();
-
     productsGrid.innerHTML = filteredProducts.map(product => `
         <div class="product-card">
-            <img src="${product.images[0]}" alt="${product.name}" class="product-card__image"
-                 onerror="this.src='https://via.placeholder.com/400x300/f0f0f0/999999?text=Image+non+disponible'">
+            <img src="${product.images[0] || ''}" alt="${product.name}" class="product-card__image" onerror="this.style.display='none';">
             <div class="product-card__content">
                 <h3 class="product-card__name">${product.name}</h3>
                 <div class="product-card__details">
@@ -41,18 +37,15 @@ function displayProducts() {
                 </div>
                 <div class="product-card__price">${formatPrice(product.price)}</div>
                 <div class="product-card__button">
-                    <a href="product.html?id=${product.id}" class="btn btn--primary" style="width: 100%; display: block; margin-bottom: 0.5rem;">
-                        Voir les détails
-                    </a>
-                    <button class="btn btn--secondary" style="width: 100%; display: block;" onclick="showOrderMenu(); return false;">
-                        Commander via DM
-                    </button>
+                    <a href="product.html?id=${product.id}" class="btn btn--primary" style="width: 100%; display: block; margin-bottom: 0.5rem;">Voir les détails</a>
+                    <button class="btn btn--secondary" style="width: 100%; display: block;" onclick="showOrderMenu(); return false;">Commander via DM</button>
                 </div>
             </div>
         </div>
     `).join('');
 }
 
+// configurer les filtres
 function setupFilters() {
     const searchInput = document.getElementById('searchInput');
     const filterLength = document.getElementById('filterLength');
@@ -61,37 +54,24 @@ function setupFilters() {
     const filterHairType = document.getElementById('filterHairType');
     const clearFilters = document.getElementById('clearFilters');
 
-    const filterFunction = () => {
-        applyFilters();
-    };
-
-    if (searchInput) {
-        searchInput.addEventListener('input', filterFunction);
-    }
-    if (filterLength) {
-        filterLength.addEventListener('change', filterFunction);
-    }
-    if (filterTexture) {
-        filterTexture.addEventListener('change', filterFunction);
-    }
-    if (filterLace) {
-        filterLace.addEventListener('change', filterFunction);
-    }
-    if (filterHairType) {
-        filterHairType.addEventListener('change', filterFunction);
-    }
+    const apply = () => applyFilters();
+    if (searchInput) searchInput.addEventListener('input', apply);
+    if (filterLength) filterLength.addEventListener('change', apply);
+    if (filterTexture) filterTexture.addEventListener('change', apply);
+    if (filterLace) filterLace.addEventListener('change', apply);
+    if (filterHairType) filterHairType.addEventListener('change', apply);
+    
     if (clearFilters) {
         clearFilters.addEventListener('click', () => {
-            if (searchInput) searchInput.value = '';
-            if (filterLength) filterLength.value = '';
-            if (filterTexture) filterTexture.value = '';
-            if (filterLace) filterLace.value = '';
-            if (filterHairType) filterHairType.value = '';
+            [searchInput, filterLength, filterTexture, filterLace, filterHairType].forEach(el => {
+                if (el) el.value = '';
+            });
             applyFilters();
         });
     }
 }
 
+// appliquer les filtres
 function applyFilters() {
     const searchTerm = document.getElementById('searchInput')?.value.toLowerCase() || '';
     const lengthFilter = document.getElementById('filterLength')?.value || '';
@@ -103,19 +83,18 @@ function applyFilters() {
         const matchesSearch = !searchTerm || 
             product.name.toLowerCase().includes(searchTerm) ||
             product.description.toLowerCase().includes(searchTerm);
-        
-        const matchesLength = !lengthFilter || product.length === lengthFilter;
-        const matchesTexture = !textureFilter || product.texture === textureFilter;
-        const matchesLace = !laceFilter || product.laceType === laceFilter;
-        const matchesHairType = !hairTypeFilter || product.hairType === hairTypeFilter;
-
-        return matchesSearch && matchesLength && matchesTexture && matchesLace && matchesHairType;
+        return matchesSearch &&
+            (!lengthFilter || product.length === lengthFilter) &&
+            (!textureFilter || product.texture === textureFilter) &&
+            (!laceFilter || product.laceType === laceFilter) &&
+            (!hairTypeFilter || product.hairType === hairTypeFilter);
     });
 
     displayProducts();
     updateProductsCount();
 }
 
+// mettre à jour le compteur de produits
 function updateProductsCount() {
     const productsCount = document.getElementById('productsCount');
     if (productsCount) {
