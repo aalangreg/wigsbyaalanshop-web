@@ -1,14 +1,14 @@
 @use "sass:color";
 
-// Variables
-$primary-color: #2c2c2c;
-$secondary-color: #8b7355;
-$accent-color: #d4af37;
-$text-color: #333333;
-$text-light: #666666;
+// Variables - Palette rose, blanc, noir
+$primary-color: #000000;
+$secondary-color: #e91e63;
+$accent-color: #c2185b;
+$text-color: #000000;
+$text-light: #4a4a4a;
 $bg-color: #ffffff;
-$bg-light: #f8f8f8;
-$border-color: #e0e0e0;
+$bg-light: #fff5f8;
+$border-color: #fce4ec;
 $font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 $font-heading: 'Georgia', serif;
 
@@ -189,7 +189,7 @@ ul {
     &:hover {
       background-color: color.scale($secondary-color, $lightness: -10%);
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(139, 115, 85, 0.3);
+      box-shadow: 0 4px 12px rgba(233, 30, 99, 0.3);
     }
   }
 
@@ -223,7 +223,7 @@ ul {
 
 // Hero Section
 .hero {
-  background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+  background: linear-gradient(135deg, #fff5f8 0%, #ffffff 100%);
   padding: 4rem 0;
   text-align: center;
 
