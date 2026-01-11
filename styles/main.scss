@@ -805,6 +805,7 @@ ul {
     grid-template-columns: 1fr;
     gap: 2rem;
     margin-bottom: 3rem;
+    width: 100%;
 
     @include responsive(tablet) {
       grid-template-columns: repeat(3, 1fr);
@@ -822,6 +823,8 @@ ul {
     flex-direction: column;
     justify-content: space-between;
     min-height: 100%;
+    width: 100%;
+    box-sizing: border-box;
 
     .btn {
       margin-top: auto;
@@ -845,7 +848,7 @@ ul {
     background-color: $bg-light;
     border-radius: 8px;
     width: 100%;
-    margin: 0;
+    margin: 0 auto;
     box-sizing: border-box;
   }
 
