@@ -41,14 +41,6 @@ function initOrderMenu() {
                         <p>Écrivez-nous en message privé</p>
                     </div>
                 </a>
-                <div class="order-modal__option order-modal__option--phone" onclick="copyPhoneNumber()">
-                    <div class="order-modal__icon">📞</div>
-                    <div class="order-modal__text">
-                        <h3>Via message téléphone</h3>
-                        <p class="order-modal__phone">${dmLinks.phone}</p>
-                        <button id="copyPhoneBtn" class="order-modal__copy-btn">Copier le numéro</button>
-                    </div>
-                </div>
             </div>
         </div>
     `;

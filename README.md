@@ -1,4 +1,4 @@
-# WIGS BY AALAN SHOP
+# wigsbyaalanshop-web
 
 Site web pour boutique de perruques lace premium au Canada.
 
@@ -19,10 +19,10 @@ wigsbyaalanshop-web/
 ├── img/logo-de-WIGSBYAALANSHOP.svg
 ├── js/
 │   ├── main.js
-│   ├── order-menu.js
 │   ├── catalogue.js
 │   ├── product.js
-│   └── home.js
+│   ├── home.js
+│   └── order-menu.js
 └── styles/
     ├── main.scss
     └── main.css
@@ -34,8 +34,9 @@ Pas de dépendances, juste des fichiers statiques.
 
 Pour compiler le SCSS :
 
+Compile le SCSS :
 ```bash
-sass styles/main.scss styles/main.css
+cd styles && sass main.scss main.css
 ```
 
 Ou en mode watch :
@@ -115,9 +116,8 @@ Pas de termes génériques, clientèle experte.
 
 ## Contact
 
-- TikTok : https://www.tiktok.com/@wigsbyaalanshop
-- Facebook : https://www.facebook.com/share/1FJoRQaJHw/
-- Email : contactpro@aalanshop.com
-- Téléphone : +1 (514) 260-7145
+- TikTok: https://www.tiktok.com/@wigsbyaalanshop
+- Facebook: https://www.facebook.com/share/1FJoRQaJHw/
+- Email: contactpro@aalanshop.com
 
 Copyright 2026 WIGS BY AALAN SHOP. Tous droits réservés.
