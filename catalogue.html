@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catalogue complet de perruques lace premium. Filtrez par longueur, texture et type de lace.">
+    <title>Catalogue - WIGS BY AALAN SHOP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__logo">
+                <img src="img/logo-de-WIGSBYAALANSHOP.svg" alt="WIGS BY AALAN SHOP" class="nav__logo-img">
+                <a href="index.html" class="nav__logo-text">WIGS BY AALAN SHOP</a>
+            </div>
+            <button class="nav__toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav__menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="catalogue.html" class="active">Catalogue</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="catalogue-header">
+            <div class="container">
+                <h1 class="page__title">Catalogue</h1>
+                <p class="page__subtitle">Découvrez notre sélection de perruques lace premium</p>
+            </div>
+        </section>
+
+        <section class="catalogue-filters">
+            <div class="container">
+                <div class="filters">
+                    <div class="filters__search">
+                        <input type="text" id="searchInput" placeholder="Rechercher un produit..." class="search-input">
+                    </div>
+                    <div class="filters__group">
+                        <select id="filterLength" class="filter-select">
+                            <option value="">Toutes les longueurs</option>
+                            <option value="courte">Courte</option>
+                            <option value="moyenne">Moyenne</option>
+                            <option value="longue">Longue</option>
+                            <option value="très longue">Très longue</option>
+                        </select>
+                        <select id="filterTexture" class="filter-select">
+                            <option value="">Toutes les textures</option>
+                            <option value="Straight">Straight</option>
+                            <option value="Body Wave">Body Wave</option>
+                            <option value="Deep Wave">Deep Wave</option>
+                            <option value="Loose Wave">Loose Wave</option>
+                            <option value="Curly">Curly</option>
+                        </select>
+                        <select id="filterLace" class="filter-select">
+                            <option value="">Tous les types de lace</option>
+                            <option value="5x5 HD Lace">5x5 HD Lace</option>
+                            <option value="4x4 Lace Closure">4x4 Lace Closure</option>
+                            <option value="13x4 Lace Frontal">13x4 Lace Frontal</option>
+                        </select>
+                        <select id="filterHairType" class="filter-select">
+                            <option value="">Tous les types de cheveux</option>
+                            <option value="100% Human Hair">100% Human Hair</option>
+                            <option value="Raw Hair">Raw Hair</option>
+                            <option value="Virgin Hair">Virgin Hair</option>
+                        </select>
+                    </div>
+                    <button id="clearFilters" class="btn btn--outline">Réinitialiser</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="catalogue-products">
+            <div class="container">
+                <div class="products__info">
+                    <p id="productsCount" class="products__count">Chargement...</p>
+                </div>
+                <div class="products__grid" id="productsGrid">
+                    <!-- Produits chargés dynamiquement -->
+                </div>
+                <div id="noResults" class="no-results" style="display: none;">
+                    <p>Aucun produit ne correspond à vos critères de recherche.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3 class="footer__title">WIGS BY AALAN SHOP</h3>
+                    <p class="footer__text">
+                        Merci de visiter notre boutique. Pour toute question ou commande, 
+                        écrivez-nous en message privé. Nous vous répondrons rapidement.
+                    </p>
+                </div>
+                <div class="footer__section">
+                    <h3 class="footer__title">Navigation</h3>
+                    <ul class="footer__links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="catalogue.html">Catalogue</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h3 class="footer__title">Contact</h3>
+                    <ul class="footer__links">
+                        <li><a href="contact.html">Nous contacter</a></li>
+                        <li><a href="contact.html#tiktok">TikTok</a></li>
+                        <li><a href="contact.html#facebook">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2024 WIGS BY AALAN SHOP. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Order Modal -->
+    <div id="orderModal" class="order-modal"></div>
+    
+    <script src="js/main.js"></script>
+    <script src="js/order-menu.js"></script>
+    <script src="js/catalogue.js"></script>
+</body>
+</html>

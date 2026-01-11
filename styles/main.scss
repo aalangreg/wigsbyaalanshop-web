@@ -1,0 +1,1064 @@
+@use "sass:color";
+
+// Variables
+$primary-color: #2c2c2c;
+$secondary-color: #8b7355;
+$accent-color: #d4af37;
+$text-color: #333333;
+$text-light: #666666;
+$bg-color: #ffffff;
+$bg-light: #f8f8f8;
+$border-color: #e0e0e0;
+$font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$font-heading: 'Georgia', serif;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@mixin button-base {
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: $font-primary;
+}
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (min-width: 768px) { @content; }
+  }
+  @if $breakpoint == desktop {
+    @media (min-width: 1024px) { @content; }
+  }
+}
+
+// Reset & Base
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-primary;
+  color: $text-color;
+  line-height: 1.6;
+  background-color: $bg-color;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+// Header & Navigation
+.header {
+  background-color: $bg-color;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav {
+  @include container;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+
+  &__logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $primary-color;
+    font-family: $font-heading;
+
+    a {
+      transition: color 0.3s ease;
+      
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+
+  &__toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+
+    span {
+      width: 25px;
+      height: 2px;
+      background-color: $primary-color;
+      transition: all 0.3s ease;
+    }
+
+    @include responsive(tablet) {
+      display: none;
+    }
+  }
+
+  &__menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: $bg-color;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+
+    &.active {
+      display: flex;
+    }
+
+    @include responsive(tablet) {
+      display: flex;
+      flex-direction: row;
+      position: static;
+      box-shadow: none;
+      padding: 0;
+      gap: 2rem;
+    }
+
+    li {
+      a {
+        display: block;
+        padding: 0.75rem 1.5rem;
+        color: $text-color;
+        transition: color 0.3s ease;
+        font-weight: 500;
+
+        &:hover,
+        &.active {
+          color: $secondary-color;
+        }
+
+        @include responsive(tablet) {
+          padding: 0.5rem 0;
+        }
+      }
+    }
+  }
+}
+
+// Buttons
+.btn {
+  @include button-base;
+
+  &--primary {
+    background-color: $secondary-color;
+    color: $bg-color;
+
+    &:hover {
+      background-color: color.scale($secondary-color, $lightness: -10%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(139, 115, 85, 0.3);
+    }
+  }
+
+  &--secondary {
+    background-color: transparent;
+    color: $secondary-color;
+    border: 2px solid $secondary-color;
+
+    &:hover {
+      background-color: $secondary-color;
+      color: $bg-color;
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    color: $text-color;
+    border: 2px solid $border-color;
+
+    &:hover {
+      border-color: $secondary-color;
+      color: $secondary-color;
+    }
+  }
+}
+
+// Container
+.container {
+  @include container;
+}
+
+// Hero Section
+.hero {
+  background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+  padding: 4rem 0;
+  text-align: center;
+
+  @include responsive(tablet) {
+    padding: 6rem 0;
+  }
+
+  &__content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $primary-color;
+    margin-bottom: 1rem;
+    font-family: $font-heading;
+
+    @include responsive(tablet) {
+      font-size: 3.5rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.25rem;
+    color: $secondary-color;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  &__description {
+    font-size: 1.1rem;
+    color: $text-light;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+  }
+
+  &__badges {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  &__cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: $bg-light;
+  border: 1px solid $border-color;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: $text-color;
+  font-weight: 500;
+}
+
+// Features Section
+.features {
+  padding: 4rem 0;
+  background-color: $bg-color;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    @include responsive(tablet) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.feature {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  &__icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: $primary-color;
+  }
+
+  &__text {
+    color: $text-light;
+    line-height: 1.6;
+  }
+}
+
+// Preview Section
+.preview {
+  padding: 4rem 0;
+  background-color: $bg-light;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+
+    @include responsive(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include responsive(desktop) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__cta {
+    text-align: center;
+  }
+}
+
+.section__title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: $primary-color;
+  font-family: $font-heading;
+}
+
+// Product Card
+.product-card {
+  background-color: $bg-color;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  &__image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    background-color: $bg-light;
+  }
+
+  &__content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: $primary-color;
+  }
+
+  &__details {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: $text-light;
+
+    span {
+      &:not(.product-card__hair-type):not(.product-card__technical) {
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  &__hair-type,
+  &__technical {
+    text-transform: none !important;
+    font-weight: 600;
+    color: $secondary-color;
+  }
+
+  &__price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $secondary-color;
+    margin-bottom: 1rem;
+  }
+
+  &__button {
+    margin-top: auto;
+  }
+}
+
+// Catalogue
+.catalogue-header {
+  padding: 3rem 0 2rem;
+  text-align: center;
+  background-color: $bg-light;
+}
+
+.page__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $primary-color;
+  margin-bottom: 0.5rem;
+  font-family: $font-heading;
+}
+
+.page__subtitle {
+  font-size: 1.1rem;
+  color: $text-light;
+}
+
+.catalogue-filters {
+  padding: 2rem 0;
+  background-color: $bg-color;
+  border-bottom: 1px solid $border-color;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  @include responsive(tablet) {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__search {
+    flex: 1;
+  }
+
+  &__group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    flex: 2;
+  }
+}
+
+.search-input,
+.filter-select {
+  padding: 0.75rem 1rem;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: $font-primary;
+  width: 100%;
+  transition: border-color 0.3s ease;
+
+  &:focus {
+    outline: none;
+    border-color: $secondary-color;
+  }
+
+  @include responsive(tablet) {
+    width: auto;
+    min-width: 180px;
+  }
+}
+
+.catalogue-products {
+  padding: 3rem 0;
+}
+
+.products {
+  &__info {
+    margin-bottom: 2rem;
+  }
+
+  &__count {
+    color: $text-light;
+    font-size: 0.9rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    @include responsive(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include responsive(desktop) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.no-results {
+  text-align: center;
+  padding: 3rem;
+  color: $text-light;
+}
+
+// Product Page
+.product {
+  padding: 3rem 0;
+
+  &__back {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: $secondary-color;
+    font-weight: 500;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: color.scale($secondary-color, $lightness: -10%);
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+
+    @include responsive(tablet) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+.product-gallery {
+  &__main {
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  &__main-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    background-color: $bg-light;
+  }
+
+  &__thumbnails {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+  }
+
+  &__thumbnail {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    background-color: $bg-light;
+
+    &:hover,
+    &.active {
+      border-color: $secondary-color;
+    }
+  }
+}
+
+.product-info {
+  &__name {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: $primary-color;
+    font-family: $font-heading;
+  }
+
+  &__price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $secondary-color;
+    margin-bottom: 1.5rem;
+  }
+
+  &__description {
+    color: $text-light;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  &__specs {
+    margin-bottom: 2rem;
+  }
+
+  &__spec {
+    display: flex;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid $border-color;
+
+    &-label {
+      font-weight: 600;
+      width: 150px;
+      color: $primary-color;
+    }
+
+    &-value {
+      color: $text-light;
+      text-transform: capitalize;
+
+      &--technical {
+        text-transform: none;
+        font-weight: 500;
+        color: $primary-color;
+      }
+    }
+  }
+
+  &__features {
+    margin-bottom: 2rem;
+
+    ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      color: $text-light;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__cta {
+    margin-top: 2rem;
+  }
+}
+
+// About Page
+.page-header {
+  padding: 3rem 0 2rem;
+  text-align: center;
+  background-color: $bg-light;
+}
+
+.about {
+  padding: 3rem 0;
+
+  &__content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 2rem 0 1rem;
+    color: $primary-color;
+    font-family: $font-heading;
+  }
+
+  &__text {
+    color: $text-light;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  &__list {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+    color: $text-light;
+
+    li {
+      margin-bottom: 0.75rem;
+      line-height: 1.8;
+    }
+  }
+}
+
+// Contact Page
+.contact {
+  padding: 3rem 0;
+
+  &__content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  &__info {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: $primary-color;
+    font-family: $font-heading;
+  }
+
+  &__text {
+    color: $text-light;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+
+  &__channels {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+
+    @include responsive(tablet) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__channel {
+    text-align: center;
+    padding: 2rem;
+    background-color: $bg-light;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  &__message {
+    text-align: center;
+    padding: 2rem;
+    background-color: $bg-light;
+    border-radius: 8px;
+  }
+
+  &__reassurance {
+    color: $text-light;
+    line-height: 1.8;
+    font-size: 1.1rem;
+  }
+}
+
+.channel {
+  &__icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: $primary-color;
+  }
+
+  &__text {
+    color: $text-light;
+    margin-bottom: 1.5rem;
+  }
+}
+
+// Footer
+.footer {
+  background-color: $primary-color;
+  color: $bg-color;
+  padding: 3rem 0 1.5rem;
+  margin-top: 4rem;
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+
+    @include responsive(tablet) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__section {
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      font-family: $font-heading;
+    }
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-family: $font-heading;
+  }
+
+  &__text {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.8;
+  }
+
+  &__links {
+    li {
+      margin-bottom: 0.5rem;
+
+      a {
+        color: rgba(255, 255, 255, 0.8);
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $bg-color;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+  }
+}
+
+// Order Modal
+.order-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+
+  &[style*="flex"] {
+    display: flex !important;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+  }
+
+  &__content {
+    position: relative;
+    background-color: $bg-color;
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    animation: modalSlideIn 0.3s ease;
+  }
+
+  &__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: $text-light;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: $bg-light;
+      color: $primary-color;
+    }
+  }
+
+  &__title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: $primary-color;
+    font-family: $font-heading;
+    text-align: center;
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__option {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem;
+    border: 2px solid $border-color;
+    border-radius: 8px;
+    text-decoration: none;
+    color: $text-color;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      border-color: $secondary-color;
+      background-color: $bg-light;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    &--phone {
+      cursor: pointer;
+    }
+  }
+
+  &__icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+  }
+
+  &__text {
+    flex: 1;
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: $primary-color;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: $text-light;
+      margin: 0;
+    }
+  }
+
+  &__phone {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $secondary-color;
+    margin: 0.5rem 0;
+    font-family: monospace;
+  }
+
+  &__copy-btn {
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: $secondary-color;
+    color: $bg-color;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: color.scale($secondary-color, $lightness: -10%);
+    }
+  }
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Logo and brand name styling
+.nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  &-img {
+    height: 40px;
+    width: auto;
+  }
+
+  &-text {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+    color: $primary-color;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+
+.channel__phone {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+
+  &-number {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $secondary-color;
+    font-family: monospace;
+    margin: 0;
+  }
+}

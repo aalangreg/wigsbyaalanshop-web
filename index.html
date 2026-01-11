@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Boutique de perruques lace premium au Canada. Stocks limités. Livraison partout au Canada.">
+    <title>WIGS BY AALAN SHOP - Perruques Lace Premium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__logo">
+                <img src="img/logo-de-WIGSBYAALANSHOP.svg" alt="WIGS BY AALAN SHOP" class="nav__logo-img">
+                <a href="index.html" class="nav__logo-text">WIGS BY AALAN SHOP</a>
+            </div>
+            <button class="nav__toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav__menu">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="catalogue.html">Catalogue</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero__content container">
+                <h1 class="hero__title">Perruques Lace Premium</h1>
+                <p class="hero__subtitle">Qualité exceptionnelle, sélection rigoureuse</p>
+                <p class="hero__description">
+                    Découvrez notre collection exclusive de perruques lace premium. 
+                    Chaque pièce est soigneusement sélectionnée pour vous offrir la meilleure qualité.
+                </p>
+                <div class="hero__badges">
+                    <span class="badge">Stocks limités</span>
+                    <span class="badge">Livraison partout au Canada</span>
+                </div>
+                <div class="hero__cta">
+                    <a href="catalogue.html" class="btn btn--primary">Voir le catalogue</a>
+                    <button class="btn btn--secondary" onclick="showOrderMenu(); return false;">Commander via DM</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <div class="features__grid">
+                    <div class="feature">
+                        <div class="feature__icon">✨</div>
+                        <h3 class="feature__title">Qualité Premium</h3>
+                        <p class="feature__text">Sélection rigoureuse de perruques de la plus haute qualité</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature__icon">🚚</div>
+                        <h3 class="feature__title">Livraison Canada</h3>
+                        <p class="feature__text">Expédition rapide et sécurisée partout au Canada</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature__icon">💬</div>
+                        <h3 class="feature__title">Service Personnalisé</h3>
+                        <p class="feature__text">Conseils et accompagnement pour trouver la perruque parfaite</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="preview">
+            <div class="container">
+                <h2 class="section__title">Découvrez notre collection</h2>
+                <div class="preview__grid" id="previewGrid">
+                    <!-- Produits chargés dynamiquement -->
+                </div>
+                <div class="preview__cta">
+                    <a href="catalogue.html" class="btn btn--primary">Voir tout le catalogue</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3 class="footer__title">WIGS BY AALAN SHOP</h3>
+                    <p class="footer__text">
+                        Merci de visiter notre boutique. Pour toute question ou commande, 
+                        écrivez-nous en message privé. Nous vous répondrons rapidement.
+                    </p>
+                </div>
+                <div class="footer__section">
+                    <h3 class="footer__title">Navigation</h3>
+                    <ul class="footer__links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="catalogue.html">Catalogue</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h3 class="footer__title">Contact</h3>
+                    <ul class="footer__links">
+                        <li><a href="contact.html">Nous contacter</a></li>
+                        <li><a href="contact.html#tiktok">TikTok</a></li>
+                        <li><a href="contact.html#facebook">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2026 WIGS BY AALAN SHOP. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Order Modal -->
+    <div id="orderModal" class="order-modal"></div>
+    
+    <script src="js/main.js"></script>
+    <script src="js/order-menu.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>
