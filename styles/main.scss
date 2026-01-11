@@ -1,16 +1,16 @@
 @use "sass:color";
 
-// Variables
-$primary-color: #2c2c2c;
-$secondary-color: #8b7355;
-$accent-color: #d4af37;
-$text-color: #333333;
-$text-light: #666666;
-$bg-color: #ffffff;
-$bg-light: #f8f8f8;
-$border-color: #e0e0e0;
+// Variables - Couleurs sobres et féminines
+$primary-color: #1a1a1a; // Noir profond
+$secondary-color: #a68b5b; // Brun chaud
+$accent-color: #c9a882; // Beige chaud
+$text-color: #2c2c2c; // Noir doux
+$text-light: #6b6b6b; // Gris doux
+$bg-color: #fefefe; // Blanc ivoire
+$bg-light: #f5f3f0; // Beige très clair
+$border-color: #e8e4df; // Beige clair
 $font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-$font-heading: 'Georgia', serif;
+$font-heading: 'Playfair Display', 'Georgia', serif;
 
 // Mixins
 @mixin flex-center {
