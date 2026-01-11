@@ -9,7 +9,13 @@
       "texture": "Straight",
       "laceType": "5x5 HD Lace",
       "hairType": "100% Human Hair",
-      "images": [],
+      "images": [
+        "img/imgproductsid2/wigStraight.jpeg"
+      ],
+      "videos": [
+        "img/imgproductsid2/straight24inch.mp4",
+        "img/imgproductsid2/straight24p.mp4"
+      ],
       "features": [
         "5x5 HD Lace invisible",
         "Texture Straight lisse et soyeuse",
@@ -27,7 +33,15 @@
       "texture": "Body Wave",
       "laceType": "5x5 HD Lace",
       "hairType": "100% Human Hair",
-      "images": [],
+      "images": [
+        "img/imgproductsid1/bodywave.jpeg",
+        "img/imgproductsid1/bodywave2.jpeg"
+      ],
+      "videos": [
+        "img/imgproductsid1/bodywave24in.mp4",
+        "img/imgproductsid1/bodywave24inch.mp4",
+        "img/imgproductsid1/bodywave24p.mp4"
+      ],
       "features": [
         "5x5 HD Lace ultra fine",
         "Texture Body Wave naturelle",
