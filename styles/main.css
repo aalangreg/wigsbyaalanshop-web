@@ -699,6 +699,17 @@ ul {
   border-radius: 8px;
   transition: all 0.3s ease;
   border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+}
+.contact__channel .btn {
+  margin-top: auto;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .contact__channel:hover {
   transform: translateY(-5px);
