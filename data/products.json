@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Perruque 5x5 HD Lace Wig 24 Inches Straight",
       "description": "Perruque 5x5 HD Lace Wig en 24 inches, texture Straight. Cheveux lisses, soyeux et naturels pour un rendu élégant et professionnel. La HD Lace 5x5 offre une ligne de cheveux ultra naturelle avec une finition invisible, idéale pour un port quotidien ou des occasions spéciales.",
-      "price": 390.00,
+      "price": 310.00,
       "length": "24\"",
       "texture": "Straight",
       "laceType": "5x5 HD Lace",
@@ -52,134 +52,149 @@
     },
     {
       "id": 3,
-      "name": "Perruque 13x4 Lace Frontal Body Wave",
-      "description": "Perruque 13x4 Lace Frontal avec de belles ondulations naturelles en texture Body Wave. Le 13x4 Lace Frontal permet une coiffure dans toutes les directions avec une ligne de cheveux naturelle. Idéale pour les coiffures en chignon ou queue de cheval.",
-      "price": 449,
-      "length": "30\"",
-      "texture": "Body Wave",
-      "laceType": "13x4 Lace Frontal",
-      "hairType": "Raw Hair",
+      "name": "Perruque 13x4 HD Lace Frontal Deep Wave 22\"",
+      "description": "13x4 HD Lace Frontal avec ondulations Deep Wave et ligne de cheveux ultra naturelle. Longueur moyenne idéale pour toutes les occasions. Texture riche et définie, parfaite pour des coiffures polyvalentes.",
+      "price": 379,
+      "length": "22\"",
+      "texture": "Deep Wave",
+      "laceType": "13x4 HD Lace Frontal",
+      "hairType": "100% Human Hair",
       "images": [
-        "https://via.placeholder.com/800x600/9B8A7A/FFFFFF?text=Perruque+13x4+Lace+Frontal",
-        "https://via.placeholder.com/800x600/8B7A6A/FFFFFF?text=Body+Wave",
-        "https://via.placeholder.com/800x600/7A6B5A/FFFFFF?text=Coiffure+Polyvalente"
+        "https://via.placeholder.com/800x600/7A6B5A/FFFFFF?text=Deep+Wave+Frontal",
+        "https://via.placeholder.com/800x600/8B7A6A/FFFFFF?text=Coiffure+Polyvalente"
       ],
       "features": [
-        "13x4 Lace Frontal pour toutes les coiffures",
-        "Ondulations Body Wave naturelles",
-        "Longueur très longue",
-        "Raw Hair de qualité supérieure",
-        "Polyvalente"
+        "13x4 HD Lace Frontal",
+        "Deep Wave naturel",
+        "100% cheveux humains",
+        "Coiffures multiples",
+        "Longueur moyenne"
       ]
     },
     {
       "id": 4,
-      "name": "Perruque 4x4 Lace Closure Courte Straight",
-      "description": "Perruque 4x4 Lace Closure avec une coupe courte et moderne en texture Straight. Texture naturelle qui imite parfaitement les cheveux naturels. Parfaite pour un look quotidien élégant et facile à entretenir.",
-      "price": 249,
-      "length": "18\"",
-      "texture": "Straight",
-      "laceType": "4x4 Lace Closure",
-      "hairType": "100% Human Hair",
+      "name": "Perruque 5x5 HD Lace Burmese Curly 24\"",
+      "description": "Perruque 5x5 HD Lace Burmese Curly avec boucle serrée et volume généreux. Cheveux Raw Hair de qualité supérieure pour un rendu luxueux et naturel. Idéal pour des looks glamour.",
+      "price": 499,
+      "length": "24\"",
+      "texture": "Burmese Curly",
+      "laceType": "5x5 HD Lace",
+      "hairType": "Raw Hair",
       "images": [
-        "https://via.placeholder.com/800x600/6B5B4A/FFFFFF?text=Perruque+4x4+Lace+Closure",
-        "https://via.placeholder.com/800x600/7A6B5A/FFFFFF?text=Texture+Straight",
-        "https://via.placeholder.com/800x600/8B7A6A/FFFFFF?text=Coupe+Moderne"
+        "https://via.placeholder.com/800x600/8B7355/FFFFFF?text=Burmese+Curly",
+        "https://via.placeholder.com/800x600/9B8A7A/FFFFFF?text=Volume+Luxueux"
       ],
       "features": [
-        "Coupe courte moderne",
-        "Texture Straight naturelle",
-        "4x4 Lace Closure",
-        "100% Human Hair",
-        "Facile à entretenir"
+        "5x5 HD Lace invisible",
+        "Boucles Burmese Curly naturelles",
+        "Raw Hair premium",
+        "Volume généreux",
+        "Look glamour"
       ]
     },
     {
       "id": 5,
-      "name": "Perruque 5x5 HD Lace Longue Straight",
-      "description": "Perruque 5x5 HD Lace avec cheveux longs en texture Straight de qualité exceptionnelle. Le 5x5 HD Lace offre une liberté totale de coiffure et un rendu ultra-naturel. Parfaite pour les occasions spéciales.",
-      "price": 499,
-      "length": "30\"",
-      "texture": "Straight",
-      "laceType": "5x5 HD Lace",
-      "hairType": "Virgin Hair",
+      "name": "Perruque 13x4 HD Lace Cambodian Curly 26\"",
+      "description": "13x4 HD Lace Frontal avec boucles Cambodgiennes et ligne de cheveux naturelle. Texture riche et luxueuse, idéale pour styles volumineux et sophistiqués.",
+      "price": 529,
+      "length": "26\"",
+      "texture": "Cambodian Curly",
+      "laceType": "13x4 HD Lace Frontal",
+      "hairType": "Raw Hair",
       "images": [
-        "https://via.placeholder.com/800x600/8B7355/FFFFFF?text=5x5+HD+Lace+Longue",
-        "https://via.placeholder.com/800x600/9B8A7A/FFFFFF?text=Cheveux+Straight",
-        "https://via.placeholder.com/800x600/7A6B5A/FFFFFF?text=Qualité+Premium"
+        "https://via.placeholder.com/800x600/7A6B5A/FFFFFF?text=Cambodian+Curly",
+        "https://via.placeholder.com/800x600/8B7A6A/FFFFFF?text=Frontal+Luxueux"
       ],
       "features": [
-        "5x5 HD Lace premium",
-        "Cheveux très longs",
-        "Texture Straight soyeuse",
-        "Virgin Hair de qualité exceptionnelle",
-        "Occasions spéciales"
+        "13x4 HD Lace Frontal",
+        "Cambodian Curly naturel",
+        "Raw Hair premium",
+        "Coiffures sophistiquées",
+        "Longueur généreuse"
       ]
     },
     {
       "id": 6,
-      "name": "Perruque 13x4 Lace Frontal Deep Wave",
-      "description": "Perruque 13x4 Lace Frontal avec de magnifiques ondulations en texture Deep Wave. Le 13x4 Lace Frontal permet toutes les coiffures avec une ligne de cheveux naturelle. Les ondulations sont définies et durables.",
-      "price": 379,
-      "length": "22\"",
-      "texture": "Deep Wave",
-      "laceType": "13x4 Lace Frontal",
-      "hairType": "100% Human Hair",
+      "name": "Perruque 5x5 HD Lace Pineapple Wave 28\"",
+      "description": "5x5 HD Lace Closure avec ondulations Pineapple Wave, texture fluide et élégante. Cheveux Virgin Hair de qualité exceptionnelle, facile à coiffer et durable.",
+      "price": 459,
+      "length": "28\"",
+      "texture": "Pineapple Wave",
+      "laceType": "5x5 HD Lace Closure",
+      "hairType": "Virgin Hair",
       "images": [
-        "https://via.placeholder.com/800x600/7A6B5A/FFFFFF?text=13x4+Lace+Frontal",
-        "https://via.placeholder.com/800x600/8B7A6A/FFFFFF?text=Deep+Wave",
-        "https://via.placeholder.com/800x600/9B8A7A/FFFFFF?text=Coiffure+Polyvalente"
+        "https://via.placeholder.com/800x600/8B7A6A/FFFFFF?text=Pineapple+Wave",
+        "https://via.placeholder.com/800x600/9B8A7A/FFFFFF?text=Cheveux+Virgin"
       ],
       "features": [
-        "13x4 Lace Frontal",
-        "Ondulations Deep Wave moyennes",
-        "Coiffures multiples",
-        "100% Human Hair",
-        "Durabilité exceptionnelle"
+        "5x5 HD Lace Closure",
+        "Pineapple Wave naturelle",
+        "Virgin Hair premium",
+        "Longueur extra",
+        "Look élégant et durable"
       ]
     },
     {
       "id": 7,
-      "name": "Perruque 4x4 Lace Closure Loose Wave",
-      "description": "Perruque 4x4 Lace Closure avec de belles ondulations en texture Loose Wave et une longueur généreuse. Texture naturelle et mouvement fluide. Parfaite pour un look romantique et élégant.",
-      "price": 329,
-      "length": "26\"",
-      "texture": "Loose Wave",
-      "laceType": "4x4 Lace Closure",
+      "name": "Perruque 13x6 HD Lace Frontal Curly Wave 30\"",
+      "description": "13x6 HD Lace Frontal avec ondulations Curly Wave et finition ultra naturelle. Cheveux Raw Hair, parfait pour styles volumineux et coiffures polyvalentes.",
+      "price": 549,
+      "length": "30\"",
+      "texture": "Curly Wave",
+      "laceType": "13x6 HD Lace Frontal",
       "hairType": "Raw Hair",
       "images": [
-        "https://via.placeholder.com/800x600/8B7A6A/FFFFFF?text=4x4+Lace+Closure",
-        "https://via.placeholder.com/800x600/9B8A7A/FFFFFF?text=Loose+Wave",
-        "https://via.placeholder.com/800x600/7A6B5A/FFFFFF?text=Longueur+Généreuse"
+        "https://via.placeholder.com/800x600/7A6B5A/FFFFFF?text=Curly+Wave",
+        "https://via.placeholder.com/800x600/8B7A6A/FFFFFF?text=Frontal+Luxueux"
       ],
       "features": [
-        "4x4 Lace Closure naturel",
-        "Ondulations Loose Wave fluides",
-        "Longueur généreuse",
-        "Raw Hair de qualité",
-        "Look romantique"
+        "13x6 HD Lace Frontal",
+        "Curly Wave naturel",
+        "Raw Hair premium",
+        "Longueur très longue",
+        "Coiffures multiples"
       ]
     },
     {
       "id": 8,
-      "name": "Perruque 5x5 HD Lace Body Wave Courte",
-      "description": "Perruque 5x5 HD Lace avec une texture Body Wave et une coupe courte. Offre une liberté totale de coiffure avec un rendu ultra-naturel. Idéale pour un look quotidien sophistiqué.",
-      "price": 349,
-      "length": "18\"",
-      "texture": "Body Wave",
-      "laceType": "5x5 HD Lace",
+      "name": "Perruque 13x4 HD Lace Italian Curly 24\"",
+      "description": "13x4 HD Lace Frontal Italian Curly avec boucles définies et naturelles. Virgin Hair de qualité, parfait pour une coiffure chic et sophistiquée.",
+      "price": 479,
+      "length": "24\"",
+      "texture": "Italian Curly",
+      "laceType": "13x4 HD Lace Frontal",
       "hairType": "Virgin Hair",
       "images": [
-        "https://via.placeholder.com/800x600/6B5B4A/FFFFFF?text=5x5+HD+Lace",
-        "https://via.placeholder.com/800x600/7A6B5A/FFFFFF?text=Body+Wave",
-        "https://via.placeholder.com/800x600/8B7A6A/FFFFFF?text=Coupe+Courte"
+        "https://via.placeholder.com/800x600/8B7355/FFFFFF?text=Italian+Curly",
+        "https://via.placeholder.com/800x600/9B8A7A/FFFFFF?text=Virgin+Hair+Premium"
       ],
       "features": [
-        "5x5 HD Lace",
-        "Texture Body Wave naturelle",
-        "Coupe courte moderne",
+        "13x4 HD Lace Frontal",
+        "Italian Curly naturel",
         "Virgin Hair premium",
-        "Rendu ultra-naturel"
+        "Coiffures sophistiquées",
+        "Look élégant"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Perruque 5x5 HD Lace Closure Straight 20\"",
+      "description": "5x5 HD Lace Closure Straight de 20\", cheveux Human Hair, lisses et soyeux. Longueur courte idéale pour un look quotidien élégant et facile à entretenir.",
+      "price": 319,
+      "length": "20\"",
+      "texture": "Straight",
+      "laceType": "5x5 HD Lace Closure",
+      "hairType": "100% Human Hair",
+      "images": [
+        "https://via.placeholder.com/800x600/7A6B5A/FFFFFF?text=Straight+Closure",
+        "https://via.placeholder.com/800x600/8B7A6A/FFFFFF?text=Human+Hair"
+      ],
+      "features": [
+        "5x5 HD Lace Closure",
+        "Texture Straight naturelle",
+        "100% Human Hair",
+        "Look quotidien élégant",
+        "Facile à coiffer"
       ]
     }
   ]
