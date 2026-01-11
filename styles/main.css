@@ -612,7 +612,11 @@ ul {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 60%;
-  background-attachment: fixed;
+}
+@media (min-width: 768px) {
+  .about {
+    background-attachment: fixed;
+  }
 }
 .about::before {
   content: "";
