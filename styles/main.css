@@ -607,10 +607,28 @@ ul {
 
 .about {
   padding: 3rem 0;
+  position: relative;
+  background-image: url("../img/logo-de-WIGSBYAALANSHOP.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  background-attachment: fixed;
+}
+.about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  z-index: 0;
 }
 .about__content {
   max-width: 800px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 .about__title {
   font-size: 1.75rem;
