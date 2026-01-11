@@ -719,23 +719,22 @@ ul {
 }
 .contact__message {
   text-align: center;
-  padding: 2.5rem 3rem;
+  padding: 1.5rem 2rem;
   background-color: #f5e8e8;
   border-radius: 8px;
   width: 100%;
-  max-width: 100%;
   margin: 0 auto;
 }
 .contact__reassurance {
   color: #333333;
-  line-height: 1.8;
-  font-size: 1.25rem;
+  line-height: 1.6;
+  font-size: 1rem;
   margin: 0;
 }
 .contact__reassurance strong {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   color: #000000;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .channel__icon {
