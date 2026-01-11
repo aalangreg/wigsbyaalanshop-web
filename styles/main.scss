@@ -64,6 +64,35 @@ body {
   color: $text-color;
   line-height: 1.6;
   background-color: $bg-color;
+  position: relative;
+  
+  // Filigrane avec le logo
+  &::before {
+    content: '';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 600px;
+    height: 600px;
+    background-image: url('../img/logo-de-WIGSBYAALANSHOP.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.03;
+    z-index: 0;
+    pointer-events: none;
+    
+    @include responsive(tablet) {
+      width: 800px;
+      height: 800px;
+    }
+    
+    @include responsive(desktop) {
+      width: 1000px;
+      height: 1000px;
+    }
+  }
 }
 
 img {
@@ -87,6 +116,8 @@ ul {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
+  z-index: 1000;
+  position: relative;
   z-index: 1000;
 }
 
@@ -219,6 +250,8 @@ ul {
 // Container
 .container {
   @include container;
+  position: relative;
+  z-index: 1;
 }
 
 // Hero Section
@@ -226,6 +259,8 @@ ul {
   background: linear-gradient(135deg, #fff5f8 0%, #ffffff 100%);
   padding: 4rem 0;
   text-align: center;
+  position: relative;
+  z-index: 1;
 
   @include responsive(tablet) {
     padding: 6rem 0;
