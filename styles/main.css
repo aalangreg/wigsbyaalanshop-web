@@ -27,7 +27,8 @@ body::before {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 1;
+  filter: blur(8px);
+  opacity: 0.3;
   z-index: 0;
   pointer-events: none;
 }
@@ -35,12 +36,14 @@ body::before {
   body::before {
     width: 800px;
     height: 800px;
+    filter: blur(10px);
   }
 }
 @media (min-width: 1024px) {
   body::before {
     width: 1000px;
     height: 1000px;
+    filter: blur(12px);
   }
 }
 
