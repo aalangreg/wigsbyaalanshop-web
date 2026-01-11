@@ -34,7 +34,7 @@ function displayProducts() {
             <div class="product-card__content">
                 <h3 class="product-card__name">${product.name}</h3>
                 <div class="product-card__details">
-                    <span>${product.length}</span>
+                    <span class="product-card__technical">${product.length}</span>
                     <span class="product-card__technical">${product.texture}</span>
                     <span class="product-card__technical">${product.laceType}</span>
                     ${product.hairType ? `<span class="product-card__hair-type">${product.hairType}</span>` : ''}
